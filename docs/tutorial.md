@@ -1,12 +1,14 @@
-# Talvez Tutorial
+# talvez Tutorial
 
-A comprehensive guide to using the Talvez library for safe, composable handling of optional values and fallible computations in Python.
+A comprehensive guide to using the talvez library for safe, composable handling of optional values and fallible computations in Python.
 
 ---
 ## 1. Introduction
-Talvez provides small functional primitives centered around a `Maybe` type (inspired by Haskell / other FP ecosystems and the R 'maybe' package) plus decorators to safely wrap functions and compose computations that may fail.
+Talvez provides small functional primitives centered around a `Maybe` type (inspired by Haskell / other FP ecosystems and the R 'maybe' package) 
+plus decorators to safely wrap functions and compose computations that may fail.
 
 Core goals:
+
 - Eliminate scattered try/except blocks
 - Make failure explicit (via `Nothing`) rather than implicit (exceptions, `None`, magic values)
 - Provide ergonomic wrappers (`@maybe`, `@perhaps`) to retrofit existing code
@@ -21,6 +23,7 @@ pip install -e .
 
 ---
 ## 3. The Maybe Type
+
 `Maybe` is a union: either `Just(value)` or `Nothing`.
 
 ```python
@@ -35,12 +38,14 @@ assert y.is_nothing
 ```
 
 Key methods:
+
 - `fmap(fn)`: Apply a pure function to the wrapped value if present.
 - `bind(fn)`: Apply a function returning another `Maybe` (monadic chaining).
 - `get_or(default)`: Extract the value or fall back to a default.
 - `to_optional()`: Convert to a Python `Optional` (i.e., unwrap to raw value or `None`).
 
 Example:
+
 ```python
 just(10).fmap(lambda v: v + 5)          # Just(15)
 just(10).bind(lambda v: just(v * 3))    # Just(30)
@@ -48,6 +53,7 @@ nothing().fmap(lambda v: v + 5)         # Nothing
 ```
 
 ### 3.1 Creating Maybes From Optionals
+
 ```python
 from talvez import from_optional
 from_optional(5)        # Just(5)
@@ -55,7 +61,9 @@ from_optional(None)     # Nothing
 ```
 
 ### 3.2 Sequencing a Collection of Maybes
+
 `sequence` short-circuits to `Nothing` if any element is `Nothing`.
+
 ```python
 from talvez import sequence, just, nothing
 sequence(iter([just(1), just(2), just(3)])).get_or([])  # [1, 2, 3]
@@ -64,7 +72,9 @@ sequence(iter([just(1), nothing(), just(3)])).is_nothing  # True
 
 ---
 ## 4. Wrapping Existing Functions With Decorators
+
 ### 4.1 @maybe
+
 `@maybe` converts a function into one that returns a `Maybe` instead of raising or propagating invalid results.
 
 Behavior:
@@ -199,7 +209,9 @@ This uniform table simplifies reasoning about function reliability.
 ---
 ## 8. Interoperability & Migration
 ### 8.1 Gradual Adoption
+
 Start by wrapping the “edges” of your system:
+
 - Parsing / validation boundaries
 - External I/O normalization
 - Optional configuration lookups
@@ -207,6 +219,7 @@ Start by wrapping the “edges” of your system:
 Then propagate `Maybe` deeper where error branching is currently ad-hoc.
 
 ### 8.2 Converting Back to Exceptions (If Needed)
+
 ```python
 val = parse_int("x")
 if val.is_nothing:
@@ -215,7 +228,9 @@ use(val.get_or(0))
 ```
 
 ### 8.3 Using With Type Checkers
+
 Because `Maybe` is a union, type checkers understand that after pattern checks you can treat the value as present.
+
 ```python
 m = parse_int("12")
 if m.is_just:
@@ -226,6 +241,7 @@ if m.is_just:
 ---
 ## 9. Advanced Patterns
 ### 9.1 Lifting Multi-Arg Functions
+
 Wrap first, then partially apply:
 ```python
 from functools import partial
@@ -237,6 +253,7 @@ half = lambda x: div(x, 2)  # returns Maybe
 ```
 
 ### 9.2 Conditional Branching
+
 ```python
 candidate = parse_int(" 17 ").fmap(lambda v: v - 5)
 
@@ -256,14 +273,18 @@ assert sequence(iter(values)).is_nothing  # one failed
 Decorators work on instance or class methods alike. Just remember they wrap the returned value into a `Maybe`.
 
 ### 9.5 Integrating With Async (Future Consideration)
+
 Currently decorators are sync. An async variant could:
+
 - Detect coroutine functions
 - Await inside wrapper
 You can prototype by manually catching exceptions in async code and returning `Just/ Nothing`.
 
 ---
 ## 10. Testing Strategies
+
 When testing functions that return `Maybe`:
+
 - Assert structural form (is_just / is_nothing)
 - Assert value via `get_or` or `value` when is_just
 - Use property tests to ensure invariants (e.g., mapping identity leaves value unchanged)
@@ -278,6 +299,7 @@ def test_identity_law():
 
 ---
 ## 11. Performance Notes
+
 - Overhead is minimal (dataclass + small wrapper logic)
 - Suitable for request-level / batch data processing
 - Avoid in ultra-hot loops where raw primitives may be faster
@@ -293,7 +315,7 @@ Micro-optimizations (only if profiling demands):
 | Exceptions | Native, stack info | Verbose try/except, control-flow via exceptions |
 | Returning None | Simple | Ambiguous None vs legitimate None |
 | Sentinel Objects | Explicit | Boilerplate per function |
-| Talvez Maybe | Composable, declarative | Requires adoption pattern |
+| talvez Maybe | Composable, declarative | Requires adoption pattern |
 
 ---
 ## 13. Common Pitfalls
@@ -324,6 +346,6 @@ assert res.get_or(None) == 3
 
 ---
 ## 16. Closing Thoughts
-Talvez offers a pragmatic middle ground: functional-style safety without heavy abstractions. Start small—wrap a couple of risky functions—and grow patterns organically.
+talvez offers a pragmatic middle ground: functional-style safety without heavy abstractions. Start small—wrap a couple of risky functions—and grow patterns organically.
 
 Feedback & contributions welcome!
