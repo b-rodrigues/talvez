@@ -38,8 +38,8 @@
 
 ## Logical combinators
 
-::: talvez.predicates.not_and_
-::: talvez.predicates.not_or_
+::: talvez.predicates.and_
+::: talvez.predicates.or_
 
 !!! tip
     These are strict: each predicate must return the literal `True` to be considered a pass. Any other truthy value will fail the conjunction (`and_`) or be ignored in the disjunction (`or_`).
