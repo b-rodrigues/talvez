@@ -1,23 +1,35 @@
 # Tutorial
 
-A comprehensive guide to using the `talvez` library for safe, composable handling of optional values and fallible computations in Python.
-
----
+A comprehensive guide to using the `talvez` library for safe, composable
+handling of optional values and fallible computations in Python.
 
 ## 1. Introduction
 
-talvez provides small functional primitives centered around a `Maybe` type, inspired by Haskell, other functional programming ecosystems, and the R 'maybe' package. It includes decorators to safely wrap existing functions and compose computations that might fail.
+`talvez` provides small functional primitives centered around a `Maybe` type,
+inspired by Haskell, other functional programming ecosystems, and the R `{maybe}`
+package. It includes decorators to safely wrap existing functions and compose
+computations that might fail.
 
-The core problem `talvez` addresses is the inconsistent and often implicit handling of failures in Python. Functions can fail by raising exceptions, returning `None`, or returning special values like `-1` or `False`. This forces developers to write defensive code with scattered `try/except` blocks and `if value is not None:` checks, making the main logic harder to follow.
+The core problem `talvez` addresses is the inconsistent and often implicit
+handling of failures in Python. Functions can fail by raising exceptions,
+returning `None`, or returning special values like `-1` or `False`. This forces
+developers to write defensive code with scattered `try/except` blocks and
+`if value is not None:` checks, making the main logic harder to follow.
 
 **Core goals:**
 
-*   **Eliminate scattered `try/except` blocks:** By wrapping fallible operations, `talvez` contains failures within a predictable structure, allowing you to handle them explicitly when you choose.
-*   **Make failure explicit:** Instead of relying on exceptions or ambiguous `None` returns, failure is represented by a single, explicit type: `Nothing`. This makes your function signatures more honest about what they can return.
-*   **Provide ergonomic wrappers (`@maybe`, `@perhaps`):** These decorators allow you to easily retrofit existing code to use this safer pattern without major refactoring.
-*   **Offer simple combinators for building pipelines:** Easily chain together multiple fallible operations in a readable, robust way.
-
----
+*   **Eliminate scattered `try/except` blocks:** By wrapping fallible
+    operations, `talvez` contains failures within a predictable structure,
+    allowing you to handle them explicitly when you choose.
+*   **Make failure explicit:** Instead of relying on exceptions or ambiguous
+    `None` returns, failure is represented by a single, explicit type:
+    `Nothing`. This makes your function signatures more honest about what they
+    can return.
+*   **Provide ergonomic wrappers (`@maybe`, `@perhaps`):** These decorators
+    allow you to easily retrofit existing code to use this safer pattern without
+    major refactoring.
+*   **Offer simple combinators for building pipelines:** Easily chain together
+    multiple fallible operations in a readable, robust way.
 
 ## 2. Installation
 
@@ -31,16 +43,19 @@ pip install -e .
 
 (A PyPI release can come later.)
 
----
-
 ## 3. The Maybe Type
 
-The `Maybe` type is the heart of the library. It's a generic container that represents a value that may or may not be present. A `Maybe` is one of two things:
+The `Maybe` type is the heart of the library. It's a generic container that
+represents a value that may or may not be present. A `Maybe` is one of two
+things:
 
 1.  `Just(value)`: A container holding a successful result.
-2.  `Nothing`: An empty container representing any kind of failure (an exception occurred, a validation check failed, etc.).
+2.  `Nothing`: An empty container representing any kind of failure (an exception
+    occurred, a validation check failed, etc.).
 
-This explicitness is its power. A function that returns `Maybe[int]` tells you it will either give you an `int` (wrapped in `Just`) or it will give you `Nothing`.
+This explicitness is its power. A function that returns `Maybe[int]` tells you
+it will either give you an `int` (wrapped in `Just`) or it will give you
+`Nothing`.
 
 ```python
 from talvez import just, nothing, Maybe
@@ -63,7 +78,9 @@ assert y.is_nothing is True
 
 A `Maybe`'s value is wrapped and cannot be accessed directly. You interact with it through safe methods.
 
-*   `fmap(fn)`: (Functor map) If the `Maybe` is a `Just`, it applies a regular Python function to the *inner value* and wraps the result in a new `Just`. If it's `Nothing`, it does nothing and returns `Nothing`.
+*   `fmap(fn)`: (Functor map) If the `Maybe` is a `Just`, it applies a regular
+    Python function to the *inner value* and wraps the result in a new `Just`.
+    If it's `Nothing`, it does nothing and returns `Nothing`.
 
     ```python
     just(10).fmap(lambda v: v + 5)          # Returns Just(15)
@@ -71,7 +88,10 @@ A `Maybe`'s value is wrapped and cannot be accessed directly. You interact with 
     just("hello").fmap(str.upper)           # Returns Just('HELLO')
     ```
 
-*   `bind(fn)`: (Monadic bind) This is for chaining functions that *already return a `Maybe`*. If the `Maybe` is a `Just`, `bind` applies the function to the inner value. If it's `Nothing`, it returns `Nothing`. This is the primary tool for building pipelines.
+*   `bind(fn)`: (Monadic bind) This is for chaining functions that *already
+    return a `Maybe`*. If the `Maybe` is a `Just`, `bind` applies the function
+    to the inner value. If it's `Nothing`, it returns `Nothing`. This is the
+    primary tool for building pipelines.
 
     ```python
     # A function that can fail and returns a Maybe
@@ -83,14 +103,16 @@ A `Maybe`'s value is wrapped and cannot be accessed directly. You interact with 
     nothing().bind(safe_inverse)  # Returns Nothing
     ```
 
-*   `get_or(default)`: Extracts the value from a `Just` or returns the `default` value if it's `Nothing`. This is how you exit the `Maybe` world.
+*   `get_or(default)`: Extracts the value from a `Just` or returns the `default`
+    value if it's `Nothing`. This is how you exit the `Maybe` world.
 
     ```python
     just(100).get_or(0)    # Returns 100
     nothing().get_or(0)    # Returns 0
     ```
 
-*   `to_optional()`: Converts the `Maybe` to a standard Python `Optional`, returning the raw value or `None`.
+*   `to_optional()`: Converts the `Maybe` to a standard Python `Optional`,
+    returning the raw value or `None`.
 
     ```python
     just("value").to_optional() # Returns "value"
@@ -99,7 +121,8 @@ A `Maybe`'s value is wrapped and cannot be accessed directly. You interact with 
 
 ### 3.1. Creating Maybes From Optionals
 
-The `from_optional` helper function provides a clean way to convert standard Python `None`-based logic into the `Maybe` type.
+The `from_optional` helper function provides a clean way to convert standard
+Python `None`-based logic into the `Maybe` type.
 
 ```python
 from talvez import from_optional
@@ -116,7 +139,10 @@ maybe_nobody = from_optional(find_user(2)) # Nothing
 
 ### 3.2. Sequencing a Collection of Maybes
 
-The `sequence` function is used to convert an iterator of `Maybe`s into a single `Maybe` of a list. It short-circuits, meaning if *any* element in the collection is `Nothing`, the entire result is `Nothing`. This is useful for validating multiple inputs at once.
+The `sequence` function is used to convert an iterator of `Maybe`s into a single
+`Maybe` of a list. It short-circuits, meaning if *any* element in the collection
+is `Nothing`, the entire result is `Nothing`. This is useful for validating
+multiple inputs at once.
 
 ```python
 from talvez import sequence, just, nothing
@@ -132,20 +158,28 @@ result2 = sequence(maybes2)
 assert result2.is_nothing is True
 ```
 
----
-
 ## 4. Wrapping Existing Functions With Decorators
 
-Decorators are the most ergonomic way to integrate `talvez` into an existing codebase. They automatically wrap a function's execution, handling exceptions and validation for you.
+Decorators are the most ergonomic way to integrate `talvez` into an existing
+codebase. They automatically wrap a function's execution, handling exceptions
+and validation for you.
 
 ### 4.1. @maybe
 
-`@maybe` converts a function that could raise an exception or return an invalid result into one that safely returns a `Maybe`.
+`@maybe` converts a function that could raise an exception or return an invalid
+result into one that safely returns a `Maybe`.
 
 **Behavior:**
-*   **Catches any exception:** If the wrapped function raises any `Exception`, `@maybe` catches it and returns `Nothing`.
-*   **Enforces a predicate (`ensure`):** You can provide a function to the `ensure` argument. After the original function executes successfully, its result is passed to the `ensure` function. If it doesn't return `True`, the result is discarded and `Nothing` is returned.
-*   **Handles warnings:** By default, warnings are ignored. If you set `allow_warning=False`, any warning emitted during the function's execution will be treated as a failure, causing it to return `Nothing`.
+
+*   **Catches any exception:** If the wrapped function raises any `Exception`,
+    `@maybe` catches it and returns `Nothing`.
+*   **Enforces a predicate (`ensure`):** You can provide a function to the
+    `ensure` argument. After the original function executes successfully, its
+    result is passed to the `ensure` function. If it doesn't return `True`, the
+    result is discarded and `Nothing` is returned.
+*   **Handles warnings:** By default, warnings are ignored. If you set
+    `allow_warning=False`, any warning emitted during the function's execution
+    will be treated as a failure, causing it to return `Nothing`.
 
 **Basic Example (Exception Handling):**
 
@@ -200,9 +234,13 @@ assert less_risky_operation().get_or(None) == 1
 
 ### 4.2. @perhaps
 
-`@perhaps(default=...)` is a convenient alternative to `@maybe`. It behaves identically in terms of catching exceptions and validating results, but instead of returning a `Maybe` wrapper, it returns the raw value on success and a specified `default` value on any failure.
+`@perhaps(default=...)` is a convenient alternative to `@maybe`. It behaves
+identically in terms of catching exceptions and validating results, but instead
+of returning a `Maybe` wrapper, it returns the raw value on success and a
+specified `default` value on any failure.
 
-Use `@perhaps` when you want to immediately fall back to a default value rather than carrying the `Maybe` context forward.
+Use `@perhaps` when you want to immediately fall back to a default value rather
+than carrying the `Maybe` context forward.
 
 ```python
 from talvez import perhaps
@@ -220,11 +258,11 @@ result2 = safe_div(10, 0)  # 0.0 (fallback on ZeroDivisionError)
 # result = maybe_div(10,0).get_or(0.0)
 ```
 
----
-
 ## 5. Predicates and Composition
 
-Predicates are simple functions that take a value and return `True` or `False`. They are used with the `ensure` argument in decorators to perform validation. `talvez` provides several common predicates out of the box.
+Predicates are simple functions that take a value and return `True` or `False`.
+They are used with the `ensure` argument in decorators to perform validation.
+`talvez` provides several common predicates out of the box.
 
 *   `not_null`: Checks `value is not None`.
 *   `not_nan`: Checks that a float is not `NaN`.
@@ -232,14 +270,16 @@ Predicates are simple functions that take a value and return `True` or `False`. 
 *   `not_undefined`: A combination of `not_null`, `not_nan`, and `not_infinite`.
 *   `not_empty`: For sized objects (like strings, lists), checks `len(value) > 0`. For non-sized objects, it passes.
 
-You can combine these predicates using `and_` and `or_` to build more complex validation logic.
+You can combine these predicates using `and_` and `or_` to build more complex
+validation logic.
 
 *   `and_(*preds)`: Creates a new predicate that succeeds only if all child predicates return `True`.
 *   `or_(*preds)`: Creates a new predicate that succeeds if at least one child predicate returns `True`.
 
 **Example:**
 
-Let's create a validator for a user profile name, which must exist and not be empty whitespace.
+Let's create a validator for a user profile name, which must exist and not be
+empty whitespace.
 
 ```python
 from talvez import maybe, not_null, not_empty, and_
@@ -259,15 +299,16 @@ assert build_name("  ", "Lovelace").is_nothing # Fails not_empty after strip
 assert build_name("Grace", "").is_nothing     # Fails not_empty after strip
 ```
 
----
-
 ## 6. Chaining and Pipelines
 
-The true power of `Maybe` emerges when you compose multiple fallible operations. If any step in the chain fails, the entire subsequent chain is skipped, and `Nothing` is propagated to the end.
+The true power of `Maybe` emerges when you compose multiple fallible operations.
+If any step in the chain fails, the entire subsequent chain is skipped, and
+`Nothing` is propagated to the end.
 
 ### 6.1. Manual Chaining With `bind`
 
-You can manually chain operations using the `bind` method. This is explicit and very readable for simple pipelines.
+You can manually chain operations using the `bind` method. This is explicit and
+very readable for simple pipelines.
 
 ```python
 from talvez import just, maybe
@@ -298,7 +339,8 @@ assert failing_result.is_nothing is True
 
 ### 6.2. `chain` Utility
 
-The `chain` utility simplifies the process of applying a sequence of functions that each return a `Maybe`. It is syntactic sugar for a series of `bind` calls.
+The `chain` utility simplifies the process of applying a sequence of functions
+that each return a `Maybe`. It is syntactic sugar for a series of `bind` calls.
 
 ```python
 from talvez import maybe, just, chain
@@ -328,7 +370,8 @@ assert res_fail.is_nothing is True
 
 ### 6.3. `compose_maybe` for Reusable Pipelines
 
-If you have a pipeline that you need to reuse, `compose_maybe` lets you define it once as a single function.
+If you have a pipeline that you need to reuse, `compose_maybe` lets you define
+it once as a single function.
 
 ```python
 from talvez import compose_maybe
@@ -342,11 +385,10 @@ assert pipeline(just(10)).is_nothing is True # Fails at step3
 assert pipeline(nothing()).is_nothing is True # Starts with Nothing, remains Nothing
 ```
 
----
-
 ## 7. Error vs. Failure Semantics
 
-`talvez` standardizes how failures are handled, making your code's behavior predictable.
+`talvez` standardizes how failures are handled, making your code's behavior
+predictable.
 
 | Scenario                            | `@maybe` outcome | `@perhaps(default=D)` outcome |
 | ----------------------------------- | ---------------- | ----------------------------- |
@@ -355,19 +397,23 @@ assert pipeline(nothing()).is_nothing is True # Starts with Nothing, remains Not
 | `ensure` predicate returns `False`  | `Nothing`        | `D` (default value)           |
 | Warning emitted & `allow_warning=False` | `Nothing`        | `D` (default value)           |
 
-This uniform table simplifies reasoning about the reliability and output of any function decorated with `talvez`.
-
----
+This uniform table simplifies reasoning about the reliability and output of any
+function decorated with `talvez`.
 
 ## 8. Interoperability & Migration
 
 ### 8.1. Gradual Adoption
 
-You don't need to rewrite your entire application to use `talvez`. The best approach is to start at the "edges" of your system—places where your code interacts with the messy outside world.
+You don't need to rewrite your entire application to use `talvez`. The best
+approach is to start at the "edges" of your system—places where your code
+interacts with the messy outside world.
 
-*   **Parsing / Validation:** Wrap functions that parse user input, config files, or API responses.
-*   **External I/O:** Wrap functions that read files, make network requests, or query a database. These can all fail for reasons beyond your control.
-*   **Optional Configuration:** Instead of `config.get('key')` which returns `None`, wrap it to return a `Maybe`.
+*   **Parsing / Validation:** Wrap functions that parse user input, config
+    files, or API responses.
+*   **External I/O:** Wrap functions that read files, make network requests, or
+    query a database. These can all fail for reasons beyond your control.
+*   **Optional Configuration:** Instead of `config.get('key')` which returns
+    `None`, wrap it to return a `Maybe`.
 
 Once the inputs to a system are safely wrapped in `Maybe`, you can propagate that safety inward as needed.
 
@@ -392,7 +438,9 @@ use_value(parsed_value.get_or(0)) # Or just parsed_value.value
 
 ### 8.3. Using With Type Checkers
 
-Type checkers like Mypy understand `Maybe` because it's defined as a `Union`. This allows you to get static analysis benefits. After you check `is_just`, the type checker knows the value is present.
+Type checkers like Mypy understand `Maybe` because it's defined as a `Union`.
+This allows you to get static analysis benefits. After you check `is_just`, the
+type checker knows the value is present.
 
 ```python
 m = parse_int("12")  # Type of m is Maybe[int]
@@ -403,13 +451,13 @@ if m.is_just:
     print(m.value + 10) # No type error
 ```
 
----
-
 ## 9. Advanced Patterns
 
 ### 9.1. Lifting Multi-Arg Functions
 
-Decorators work best on functions that will be the start of a `chain`. If you have a multi-argument function you want to use mid-pipeline, wrap it first and then use `functools.partial` or a `lambda` to supply the other arguments.
+Decorators work best on functions that will be the start of a `chain`. If you
+have a multi-argument function you want to use mid-pipeline, wrap it first and
+then use `functools.partial` or a `lambda` to supply the other arguments.
 
 ```python
 from functools import partial
@@ -436,7 +484,9 @@ assert pipeline2.get_or(None) == 10.0
 
 ### 9.2. Conditional Branching
 
-You can use `bind` with a `lambda` to introduce conditional logic into a pipeline. If a condition isn't met, you can switch the pipeline to the `Nothing` track.
+You can use `bind` with a `lambda` to introduce conditional logic into a
+pipeline. If a condition isn't met, you can switch the pipeline to the `Nothing`
+track.
 
 ```python
 # A pipeline to process even numbers under 20
@@ -458,7 +508,9 @@ assert result_fail.is_nothing is True
 
 ### 9.3. Aggregating Independent Maybes
 
-The `sequence` function is the canonical way to handle this. If you have multiple independent `Maybe` values and you need them all to be `Just` to proceed, `sequence` is the tool.
+The `sequence` function is the canonical way to handle this. If you have
+multiple independent `Maybe` values and you need them all to be `Just` to
+proceed, `sequence` is the tool.
 
 ```python
 from talvez import sequence
@@ -480,7 +532,8 @@ assert one_failed.is_nothing is True
 
 ### 9.4. Decorating Methods
 
-The decorators work on instance methods and class methods just as they do on regular functions. The `self` or `cls` argument is handled correctly.
+The decorators work on instance methods and class methods just as they do on
+regular functions. The `self` or `cls` argument is handled correctly.
 
 ```python
 class Calculator:
@@ -498,15 +551,19 @@ assert calc.inverse(4).get_or(None) == 0.25
 assert calc.inverse(0).is_nothing is True
 ```
 
----
-
 ## 10. Testing Strategies
 
-When testing functions that return `Maybe`, you should test both the success and failure paths explicitly.
+When testing functions that return `Maybe`, you should test both the success and
+failure paths explicitly.
 
-*   **Assert the structure:** For a successful input, assert the result `is_just`. For a failing input, assert it `is_nothing`. This is more robust than only checking the unwrapped value.
-*   **Assert the value:** For a `Just` result, you can then check its contents using `get_or` or by accessing `.value` after an `is_just` check.
-*   **Use property tests:** For functional types like `Maybe`, property-based testing is very effective. For example, for any value `x`, `just(x).fmap(lambda y: y)` should always equal `just(x)`.
+*   **Assert the structure:** For a successful input, assert the result
+    `is_just`. For a failing input, assert it `is_nothing`. This is more robust
+    than only checking the unwrapped value.
+*   **Assert the value:** For a `Just` result, you can then check its contents
+    using `get_or` or by accessing `.value` after an `is_just` check.
+*   **Use property tests:** For functional types like `Maybe`, property-based
+    testing is very effective. For example, for any value `x`,
+    `just(x).fmap(lambda y: y)` should always equal `just(x)`.
 
 **Example Test Case:**
 
@@ -533,19 +590,22 @@ def test_fmap_identity_law():
     assert j.fmap(lambda x: x) == j
 ```
 
----
-
 ## 11. Performance Notes
 
-*   **Minimal Overhead:** The overhead of wrapping a value in a `Just` dataclass or creating a `Nothing` singleton is very small. The logic inside the decorators is also lightweight.
-*   **Best Use Cases:** The library is ideal for I/O-bound operations, data processing pipelines, and request-level logic where the clarity and safety gains far outweigh the minuscule performance cost.
-*   **Hot Loops:** Avoid using `Maybe` wrappers inside tight, performance-critical loops where millions of operations are performed per second. In those scenarios, traditional error handling or raw primitives might be faster.
+*   **Minimal Overhead:** The overhead of wrapping a value in a `Just` dataclass
+    or creating a `Nothing` singleton is very small. The logic inside the
+    decorators is also lightweight.
+*   **Best Use Cases:** The library is ideal for I/O-bound operations, data
+    processing pipelines, and request-level logic where the clarity and safety
+    gains far outweigh the minuscule performance cost.
+*   **Hot Loops:** Avoid using `Maybe` wrappers inside tight,
+    performance-critical loops where millions of operations are performed per
+    second. In those scenarios, traditional error handling or raw primitives
+    might be faster.
 
 If profiling ever indicates a bottleneck, you can make targeted optimizations:
 *   Inline simple predicate checks instead of using the `ensure` argument.
 *   Use `sequence` to validate a list of items in one go rather than in a Python loop.
-
----
 
 ## 12. Comparison With Alternatives
 
@@ -556,8 +616,6 @@ If profiling ever indicates a bottleneck, you can make targeted optimizations:
 | **Sentinel Objects** | Explicit about failure.                        | Requires defining custom sentinel objects, adds boilerplate, not easily composable.                 |
 | **`talvez` `Maybe`** | Explicit, composable, clean pipelines, safe. | Introduces a new (but simple) concept, requires a small library dependency.                         |
 
----
-
 ## 13. Common Pitfalls
 
 | Pitfall                                     | Explanation                                                                                                                                    | Fix                                                                                                        |
@@ -567,16 +625,17 @@ If profiling ever indicates a bottleneck, you can make targeted optimizations:
 | **Using `.value` without checking**         | Accessing the `.value` property on a `Nothing` instance will raise an `AttributeError`. The property only exists on `Just`.                       | Always use `.get_or(default)` or guard the access with an `if m.is_just:` check.                           |
 | **Applying `chain` to a raw value**         | The `chain` function expects its first argument to be a `Maybe`. Passing a raw value like `chain(5, ...)` will fail.                           | Always start your chain with a `Maybe`, e.g., `chain(just(5), ...)`.                                      |
 
----
-
 ## 14. Roadmap Ideas
 
-*   **Async-aware decorators:** Create `@maybe_async` that can wrap and await coroutine functions.
-*   **Mypy Plugin:** A plugin could potentially improve type narrowing and inference for more complex pipeline scenarios.
-*   **Additional Helpers:** Add more functional combinators like `lift` to adapt multi-argument functions to work on `Maybe` types seamlessly.
-*   **Integration with Validation Libraries:** Create adapters for popular libraries like Pydantic to bridge their validation failures into the `Maybe` ecosystem.
-
----
+*   **Async-aware decorators:** Create `@maybe_async` that can wrap and await
+    coroutine functions.
+*   **Mypy Plugin:** A plugin could potentially improve type narrowing and
+    inference for more complex pipeline scenarios.
+*   **Additional Helpers:** Add more functional combinators like `lift` to adapt
+    multi-argument functions to work on `Maybe` types seamlessly.
+*   **Integration with Validation Libraries:** Create adapters for popular
+    libraries like Pydantic to bridge their validation failures into the `Maybe`
+    ecosystem.
 
 ## 15. Quick Reference
 
@@ -610,12 +669,14 @@ failing_result = chain(just(" -5 "), get_digit_str, to_int, inc_positive)
 assert failing_result.is_nothing is True
 ```
 
----
-
 ## 16. Closing Thoughts
 
-`talvez` offers a pragmatic middle ground between Python's traditional error handling and the all-in approach of purely functional languages. It provides functional-style safety without heavy abstractions or a steep learning curve.
+`talvez` offers a pragmatic middle ground between Python's traditional error
+handling and the all-in approach of purely functional languages. It provides
+functional-style safety without heavy abstractions or a steep learning curve.
 
-The best way to get started is to find a small, risky part of your codebase—like parsing an API response—and wrap it with `@maybe`. See how it cleans up your logic, and grow the pattern organically from there.
+The best way to get started is to find a small, risky part of your codebase—like
+parsing an API response—and wrap it with `@maybe`. See how it cleans up your
+logic, and grow the pattern organically from there.
 
-Feedback and contributions are welcome
+Feedback and contributions are welcome.

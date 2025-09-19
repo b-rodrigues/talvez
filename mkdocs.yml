@@ -1,0 +1,38 @@
+site_name: talvez
+site_description: Documentation for talvez
+repo_url: https://github.com/b-rodrigues/talvez
+
+nav:
+  - Home: index.md
+  - Tutorial: tutorial.md
+  - API:
+      - Reference: reference.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+            show_signature: true
+  - git-revision-date-localized:
+      enabled: true
+
+markdown_extensions:
+  - admonition
+#  - toc:
+#      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/b-rodrigues/ryxpress

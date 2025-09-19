@@ -26,6 +26,7 @@ Homepage = "https://github.com/b-rodrigues/talvez"
 [project.optional-dependencies]
 dev = [
   "pytest>=7.0",
+  "numpy"
 ]
 
 [tool.setuptools.packages.find]

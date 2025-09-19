@@ -103,3 +103,10 @@ def test_sequence_breaks_on_nothing():
     vals = [just(1), nothing(), just(3)]
     out = sequence(iter(vals))
     assert out.is_nothing
+
+def test_numpy_sqrt():
+    from talvez import maybe, just
+    from numpy import sqrt
+    @maybe()
+    def safe_sqrt(x): return sqrt(x)
+    assert safe_sqrt(9) == just(3)
