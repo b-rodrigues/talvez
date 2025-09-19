@@ -2546,14 +2546,9 @@ to <code>Nothing</code>.</p>
     The wrapped payload.</p>
 <h3 id="talvez.core.Just--truthiness">Truthiness</h3>
 <p>Evaluates to True in boolean context:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>bool(just(0))
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<pre><code class="language-pycon">&gt;&gt;&gt; bool(just(0))
+True
+</code></pre>
 <h3 id="talvez.core.Just--transformations">Transformations</h3>
 <p>fmap(fn): Apply a pure function, catching exceptions -&gt; Maybe
 bind(fn): Chain a Maybe-returning function, validating return type</p>
@@ -2694,7 +2689,9 @@ bind(fn): Chain a Maybe-returning function, validating return type</p>
 <span class="normal">266</span>
 <span class="normal">267</span>
 <span class="normal">268</span>
-<span class="normal">269</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Just</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Holds a successfully computed / present value.</span>
@@ -2711,8 +2708,10 @@ bind(fn): Chain a Maybe-returning function, validating return type</p>
 <span class="sd">    Truthiness</span>
 <span class="sd">    ----------</span>
 <span class="sd">    Evaluates to True in boolean context:</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; bool(just(0))</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Transformations</span>
 <span class="sd">    ---------------</span>
@@ -2909,9 +2908,7 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">200</span>
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
@@ -2937,7 +2934,9 @@ other return type results in <code>Nothing</code>.</p>
 <span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
-<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Chain a function returning another Maybe (monadic bind).</span>
 
@@ -2995,9 +2994,7 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
@@ -3014,7 +3011,9 @@ other return type results in <code>Nothing</code>.</p>
 <span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
-<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply a pure function to the contained value.</span>
 
@@ -3063,9 +3062,7 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">232</span>
 <span class="normal">233</span>
 <span class="normal">234</span>
 <span class="normal">235</span>
@@ -3079,7 +3076,9 @@ other return type results in <code>Nothing</code>.</p>
 <span class="normal">243</span>
 <span class="normal">244</span>
 <span class="normal">245</span>
-<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="p">]:</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the wrapped value (ignoring the default).</span>
 
@@ -3121,16 +3120,16 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
 <span class="normal">254</span>
 <span class="normal">255</span>
 <span class="normal">256</span>
-<span class="normal">257</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert to a standard Optional (always the underlying value here).</span>
 
@@ -3172,9 +3171,7 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">278</span>
-<span class="normal">279</span>
-<span class="normal">280</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">280</span>
 <span class="normal">281</span>
 <span class="normal">282</span>
 <span class="normal">283</span>
@@ -3186,7 +3183,9 @@ other return type results in <code>Nothing</code>.</p>
 <span class="normal">289</span>
 <span class="normal">290</span>
 <span class="normal">291</span>
-<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">just</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Just</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">just</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Just</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Wrap a raw value into a `Just`.</span>
 
@@ -3234,16 +3233,16 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">295</span>
-<span class="normal">296</span>
-<span class="normal">297</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
 <span class="normal">301</span>
 <span class="normal">302</span>
 <span class="normal">303</span>
-<span class="normal">304</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">nothing</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">_Nothing</span><span class="p">:</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">nothing</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">_Nothing</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Obtain the `Nothing` sentinel.</span>
 
@@ -3289,9 +3288,7 @@ other return type results in <code>Nothing</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">309</span>
 <span class="normal">310</span>
 <span class="normal">311</span>
 <span class="normal">312</span>
@@ -3303,7 +3300,9 @@ other return type results in <code>Nothing</code>.</p>
 <span class="normal">318</span>
 <span class="normal">319</span>
 <span class="normal">320</span>
-<span class="normal">321</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_optional</span><span class="p">(</span><span class="n">opt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_optional</span><span class="p">(</span><span class="n">opt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert a standard Optional into a Maybe.</span>
 
@@ -3341,23 +3340,16 @@ collects unwrapped values into a list.</p>
 <p>Maybe[list[T]]
     Just of collected values if all succeed, else Nothing.</p>
 <h3 id="talvez.core.sequence--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sequence(iter([just(1), just(2)])).get_or([])
+<pre><code class="language-pycon">&gt;&gt;&gt; sequence(iter([just(1), just(2)])).get_or([])
 [1, 2]
-sequence(iter([just(1), nothing(), just(3)])).is_nothing
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; sequence(iter([just(1), nothing(), just(3)])).is_nothing
+True
+</code></pre>
 
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">324</span>
-<span class="normal">325</span>
-<span class="normal">326</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">326</span>
 <span class="normal">327</span>
 <span class="normal">328</span>
 <span class="normal">329</span>
@@ -3384,7 +3376,11 @@ True</p>
 <span class="normal">350</span>
 <span class="normal">351</span>
 <span class="normal">352</span>
-<span class="normal">353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sequence</span><span class="p">(</span><span class="n">maybes</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sequence</span><span class="p">(</span><span class="n">maybes</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Turn an iterator of Maybe values into a Maybe of a list.</span>
 
@@ -3403,10 +3399,12 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; sequence(iter([just(1), just(2)])).get_or([])</span>
 <span class="sd">    [1, 2]</span>
 <span class="sd">    &gt;&gt;&gt; sequence(iter([just(1), nothing(), just(3)])).is_nothing</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">out</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">maybes</span><span class="p">:</span>
@@ -3457,57 +3455,42 @@ allow_warning : bool, default=False
     A decorator that transforms a function returning T into one returning
     <code>Maybe[T]</code>.</p>
 <h3 id="talvez.wrappers.maybe--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from talvez import just, nothing
-@maybe()
+<pre><code class="language-pycon">&gt;&gt;&gt; from talvez import just, nothing
+&gt;&gt;&gt; @maybe()
 ... def parse_int(s: str) -&gt; int:
 ...     return int(s)
 ...
-parse_int("10").get_or(None)
+&gt;&gt;&gt; parse_int(&quot;10&quot;).get_or(None)
 10
-parse_int("x").is_nothing
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; parse_int(&quot;x&quot;).is_nothing
+True
+</code></pre>
 <p>With an ensure predicate:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>@maybe(ensure=lambda v: v &gt; 0)
+<pre><code class="language-pycon">&gt;&gt;&gt; @maybe(ensure=lambda v: v &gt; 0)
 ... def delta(x): return x - 1
 ...
-delta(5).is_just
+&gt;&gt;&gt; delta(5).is_just
 True
-delta(0).is_nothing   # ensure failed (returns -1)
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; delta(0).is_nothing   # ensure failed (returns -1)
+True
+</code></pre>
 <p>Handling warnings:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import warnings
-@maybe(allow_warning=False)
+<pre><code class="language-pycon">&gt;&gt;&gt; import warnings
+&gt;&gt;&gt; @maybe(allow_warning=False)
 ... def risky():
-...     warnings.warn("deprecated")
+...     warnings.warn(&quot;deprecated&quot;)
 ...     return 42
 ...
-risky().is_nothing
+&gt;&gt;&gt; risky().is_nothing
 True
-@maybe(allow_warning=True)
+&gt;&gt;&gt; @maybe(allow_warning=True)
 ... def tolerant():
-...     warnings.warn("deprecated")
+...     warnings.warn(&quot;deprecated&quot;)
 ...     return 42
 ...
-tolerant().get_or(None)
-42</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; tolerant().get_or(None)
+42
+</code></pre>
 <h3 id="talvez.wrappers.maybe--edge-cases">Edge Cases</h3>
 <ul>
 <li>Exception in function: returns <code>Nothing</code></li>
@@ -3619,7 +3602,13 @@ tolerant().get_or(None)
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
-<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">maybe</span><span class="p">(</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">maybe</span><span class="p">(</span>
     <span class="n">ensure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">allow_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="p">):</span>
@@ -3656,6 +3645,7 @@ tolerant().get_or(None)
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
 <span class="sd">    &gt;&gt;&gt; @maybe()</span>
 <span class="sd">    ... def parse_int(s: str) -&gt; int:</span>
@@ -3665,9 +3655,11 @@ tolerant().get_or(None)
 <span class="sd">    10</span>
 <span class="sd">    &gt;&gt;&gt; parse_int(&quot;x&quot;).is_nothing</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    With an ensure predicate:</span>
 
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; @maybe(ensure=lambda v: v &gt; 0)</span>
 <span class="sd">    ... def delta(x): return x - 1</span>
 <span class="sd">    ...</span>
@@ -3675,9 +3667,11 @@ tolerant().get_or(None)
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; delta(0).is_nothing   # ensure failed (returns -1)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Handling warnings:</span>
 
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; import warnings</span>
 <span class="sd">    &gt;&gt;&gt; @maybe(allow_warning=False)</span>
 <span class="sd">    ... def risky():</span>
@@ -3693,6 +3687,7 @@ tolerant().get_or(None)
 <span class="sd">    ...</span>
 <span class="sd">    &gt;&gt;&gt; tolerant().get_or(None)</span>
 <span class="sd">    42</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Edge Cases</span>
 <span class="sd">    ----------</span>
@@ -3754,48 +3749,33 @@ allow_warning : bool, default=False
     A decorator that converts a function returning T into one returning
     T-or-default.</p>
 <h3 id="talvez.wrappers.perhaps--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>@perhaps(default=0)
+<pre><code class="language-pycon">&gt;&gt;&gt; @perhaps(default=0)
 ... def safe_div(a, b): return a / b
 ...
-safe_div(10, 2)
+&gt;&gt;&gt; safe_div(10, 2)
 5.0
-safe_div(10, 0)
-0</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; safe_div(10, 0)
+0
+</code></pre>
 <p>With ensure:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>@perhaps(default=None, ensure=lambda v: v &gt; 10)
+<pre><code class="language-pycon">&gt;&gt;&gt; @perhaps(default=None, ensure=lambda v: v &gt; 10)
 ... def compute(x): return x * 3
 ...
-compute(5)
+&gt;&gt;&gt; compute(5)
 15
-compute(3)  # 3*3 = 9 -&gt; ensure fails
-None</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; compute(3)  # 3*3 = 9 -&gt; ensure fails
+None
+</code></pre>
 <p>Warning handling:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import warnings
-@perhaps(default=-1, allow_warning=False)
+<pre><code class="language-pycon">&gt;&gt;&gt; import warnings
+&gt;&gt;&gt; @perhaps(default=-1, allow_warning=False)
 ... def noisy():
-...     warnings.warn("careful")
+...     warnings.warn(&quot;careful&quot;)
 ...     return 99
 ...
-noisy()
--1</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; noisy()
+-1
+</code></pre>
 <h3 id="talvez.wrappers.perhaps--design-rationale">Design Rationale</h3>
 <p>Use <code>perhaps</code> when you want ergonomic fallback semantics without having to
 manipulate a Maybe object explicitly, for contexts where sentinel defaults
@@ -3810,13 +3790,7 @@ are acceptable and clearly documented.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/wrappers.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
 <span class="normal">158</span>
@@ -3902,7 +3876,19 @@ are acceptable and clearly documented.</p>
 <span class="normal">238</span>
 <span class="normal">239</span>
 <span class="normal">240</span>
-<span class="normal">241</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">perhaps</span><span class="p">(</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">perhaps</span><span class="p">(</span>
     <span class="n">default</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="n">ensure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">allow_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
@@ -3937,6 +3923,7 @@ are acceptable and clearly documented.</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; @perhaps(default=0)</span>
 <span class="sd">    ... def safe_div(a, b): return a / b</span>
 <span class="sd">    ...</span>
@@ -3944,9 +3931,11 @@ are acceptable and clearly documented.</p>
 <span class="sd">    5.0</span>
 <span class="sd">    &gt;&gt;&gt; safe_div(10, 0)</span>
 <span class="sd">    0</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    With ensure:</span>
 
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; @perhaps(default=None, ensure=lambda v: v &gt; 10)</span>
 <span class="sd">    ... def compute(x): return x * 3</span>
 <span class="sd">    ...</span>
@@ -3954,9 +3943,11 @@ are acceptable and clearly documented.</p>
 <span class="sd">    15</span>
 <span class="sd">    &gt;&gt;&gt; compute(3)  # 3*3 = 9 -&gt; ensure fails</span>
 <span class="sd">    None</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Warning handling:</span>
 
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; import warnings</span>
 <span class="sd">    &gt;&gt;&gt; @perhaps(default=-1, allow_warning=False)</span>
 <span class="sd">    ... def noisy():</span>
@@ -3965,6 +3956,7 @@ are acceptable and clearly documented.</p>
 <span class="sd">    ...</span>
 <span class="sd">    &gt;&gt;&gt; noisy()</span>
 <span class="sd">    -1</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Design Rationale</span>
 <span class="sd">    ----------------</span>
@@ -4042,26 +4034,21 @@ of the current <code>Just</code> (via <code>bind</code>). If at any point the cu
 <li>Any function returning <code>Nothing</code> halts further processing.</li>
 </ul>
 <h3 id="talvez.ops.chain--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from talvez import just, nothing
-def parse_int(s: str):
+<pre><code class="language-pycon">&gt;&gt;&gt; from talvez import just, nothing
+&gt;&gt;&gt; def parse_int(s: str):
 ...     try:
 ...         return just(int(s))
 ...     except ValueError:
 ...         return nothing()
 ...
-def reciprocal(x: int):
+&gt;&gt;&gt; def reciprocal(x: int):
 ...     return nothing() if x == 0 else just(1 / x)
 ...
-chain(just("10"), parse_int, reciprocal).get_or(None)
+&gt;&gt;&gt; chain(just(&quot;10&quot;), parse_int, reciprocal).get_or(None)
 0.1
-chain(just("foo"), parse_int, reciprocal).is_nothing
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; chain(just(&quot;foo&quot;), parse_int, reciprocal).is_nothing
+True
+</code></pre>
 <h3 id="talvez.ops.chain--edge-cases">Edge Cases</h3>
 <ul>
 <li>Passing no functions: returns the original <code>m</code>.</li>
@@ -4127,7 +4114,9 @@ True</p>
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
-<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">chain</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">chain</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sequentially apply a series of Maybe-producing functions, short-circuiting on the first failure.</span>
 
@@ -4158,6 +4147,7 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
 <span class="sd">    &gt;&gt;&gt; def parse_int(s: str):</span>
 <span class="sd">    ...     try:</span>
@@ -4172,6 +4162,7 @@ True</p>
 <span class="sd">    0.1</span>
 <span class="sd">    &gt;&gt;&gt; chain(just(&quot;foo&quot;), parse_int, reciprocal).is_nothing</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Edge Cases</span>
 <span class="sd">    ----------</span>
@@ -4210,32 +4201,27 @@ values.</p>
 <p>Callable[[Maybe[Any]], Maybe[Any]]
     A function that, given an initial <code>Maybe</code>, applies the pipeline.</p>
 <h3 id="talvez.ops.compose_maybe--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from talvez import just, nothing
-def non_empty(s: str):
+<pre><code class="language-pycon">&gt;&gt;&gt; from talvez import just, nothing
+&gt;&gt;&gt; def non_empty(s: str):
 ...     return just(s) if s else nothing()
 ...
-def to_int(s: str):
+&gt;&gt;&gt; def to_int(s: str):
 ...     try:
 ...         return just(int(s))
 ...     except ValueError:
 ...         return nothing()
 ...
-def positive(x: int):
+&gt;&gt;&gt; def positive(x: int):
 ...         return just(x) if x &gt; 0 else nothing()
 ...
-pipeline = compose_maybe(non_empty, to_int, positive)
-pipeline(just("42")).get_or(None)
+&gt;&gt;&gt; pipeline = compose_maybe(non_empty, to_int, positive)
+&gt;&gt;&gt; pipeline(just(&quot;42&quot;)).get_or(None)
 42
-pipeline(just("")).is_nothing
+&gt;&gt;&gt; pipeline(just(&quot;&quot;)).is_nothing
 True
-pipeline(just("-5")).is_nothing
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; pipeline(just(&quot;-5&quot;)).is_nothing
+True
+</code></pre>
 <h3 id="talvez.ops.compose_maybe--comparison">Comparison</h3>
 <p>This:
     pipeline = compose_maybe(f1, f2, f3)
@@ -4251,9 +4237,7 @@ Is equivalent to:
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/ops.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
 <span class="normal"> 67</span>
 <span class="normal"> 68</span>
 <span class="normal"> 69</span>
@@ -4309,7 +4293,11 @@ Is equivalent to:
 <span class="normal">119</span>
 <span class="normal">120</span>
 <span class="normal">121</span>
-<span class="normal">122</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compose_maybe</span><span class="p">(</span><span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]]):</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compose_maybe</span><span class="p">(</span><span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compose multiple Maybe-producing functions into a reusable pipeline.</span>
 
@@ -4331,6 +4319,7 @@ Is equivalent to:
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
 <span class="sd">    &gt;&gt;&gt; def non_empty(s: str):</span>
 <span class="sd">    ...     return just(s) if s else nothing()</span>
@@ -4351,6 +4340,7 @@ Is equivalent to:
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; pipeline(just(&quot;-5&quot;)).is_nothing</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Comparison</span>
 <span class="sd">    ----------</span>
@@ -4393,20 +4383,15 @@ non‑empty containers) returns True because it is not the singleton <code>True<
 <p>bool
     False only when <code>x is True</code>; True otherwise.</p>
 <h3 id="talvez.predicates.not_true--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_true(True)
+<pre><code class="language-pycon">&gt;&gt;&gt; not_true(True)
 False
-not_true(False)
+&gt;&gt;&gt; not_true(False)
 True
-not_true(1)
+&gt;&gt;&gt; not_true(1)
 True
-not_true("anything")
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; not_true(&quot;anything&quot;)
+True
+</code></pre>
 <h3 id="talvez.predicates.not_true--notes">Notes</h3>
 <p>This function is used internally to implement other predicates without
 conflating general truthiness with strict identity to <code>True</code>.</p>
@@ -4448,7 +4433,9 @@ conflating general truthiness with strict identity to <code>True</code>.</p>
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_true</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_true</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return True if the argument is NOT the literal boolean True.</span>
 
@@ -4468,6 +4455,7 @@ conflating general truthiness with strict identity to <code>True</code>.</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_true(True)</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_true(False)</span>
@@ -4476,6 +4464,7 @@ conflating general truthiness with strict identity to <code>True</code>.</p>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; not_true(&quot;anything&quot;)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -4504,25 +4493,18 @@ conflating general truthiness with strict identity to <code>True</code>.</p>
 <p>bool
     True if <code>a is not None</code>, False otherwise.</p>
 <h3 id="talvez.predicates.not_null--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_null(None)
+<pre><code class="language-pycon">&gt;&gt;&gt; not_null(None)
 False
-not_null(0)
+&gt;&gt;&gt; not_null(0)
 True
-not_null("")
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; not_null(&quot;&quot;)
+True
+</code></pre>
 
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
 <span class="normal">50</span>
@@ -4544,7 +4526,11 @@ True</p>
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
-<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_null</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_null</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return True if the value is not None.</span>
 
@@ -4560,12 +4546,14 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_null(None)</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_null(0)</span>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; not_null(&quot;&quot;)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Intentionally phrased via not_true for internal stylistic consistency.</span>
     <span class="k">return</span> <span class="n">not_true</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
@@ -4590,46 +4578,43 @@ True</p>
 <p>bool
     False only when <code>a</code> is a float and <code>math.isnan(a)</code> is True.</p>
 <h3 id="talvez.predicates.not_nan--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_nan(float("nan"))
+<pre><code class="language-pycon">&gt;&gt;&gt; not_nan(float(&quot;nan&quot;))
 False
-not_nan(3.14)
+&gt;&gt;&gt; not_nan(3.14)
 True
-not_nan("nan")
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; not_nan(&quot;nan&quot;)
+True
+</code></pre>
 
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_nan</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_nan</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return True if the value is NOT a floating-point NaN (Not-a-Number).</span>
 
@@ -4645,12 +4630,14 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_nan(float(&quot;nan&quot;))</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_nan(3.14)</span>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; not_nan(&quot;nan&quot;)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
@@ -4674,31 +4661,20 @@ True</p>
 <p>bool
     False when <code>a</code> is +inf or -inf (as a numeric); True otherwise.</p>
 <h3 id="talvez.predicates.not_infinite--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_infinite(float("inf"))
+<pre><code class="language-pycon">&gt;&gt;&gt; not_infinite(float(&quot;inf&quot;))
 False
-not_infinite(float("-inf"))
+&gt;&gt;&gt; not_infinite(float(&quot;-inf&quot;))
 False
-not_infinite(42)
+&gt;&gt;&gt; not_infinite(42)
 True
-not_infinite("inf")
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; not_infinite(&quot;inf&quot;)
+True
+</code></pre>
 
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
 <span class="normal">105</span>
 <span class="normal">106</span>
 <span class="normal">107</span>
@@ -4717,7 +4693,15 @@ True</p>
 <span class="normal">120</span>
 <span class="normal">121</span>
 <span class="normal">122</span>
-<span class="normal">123</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_infinite</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_infinite</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return True if the value is not positive or negative infinity.</span>
 
@@ -4733,6 +4717,7 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_infinite(float(&quot;inf&quot;))</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_infinite(float(&quot;-inf&quot;))</span>
@@ -4741,6 +4726,7 @@ True</p>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; not_infinite(&quot;inf&quot;)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)))</span>
 </code></pre></div></td></tr></table></div>
@@ -4773,33 +4759,20 @@ True</p>
 <p>bool
     True only if all component predicates pass.</p>
 <h3 id="talvez.predicates.not_undefined--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_undefined(None)
+<pre><code class="language-pycon">&gt;&gt;&gt; not_undefined(None)
 False
-not_undefined(float("nan"))
+&gt;&gt;&gt; not_undefined(float(&quot;nan&quot;))
 False
-not_undefined(float("inf"))
+&gt;&gt;&gt; not_undefined(float(&quot;inf&quot;))
 False
-not_undefined(0)
-True</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; not_undefined(0)
+True
+</code></pre>
 
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
@@ -4825,7 +4798,17 @@ True</p>
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_undefined</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_undefined</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Composite predicate: value is neither None, NaN, nor infinite.</span>
 
@@ -4846,6 +4829,7 @@ True</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_undefined(None)</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_undefined(float(&quot;nan&quot;))</span>
@@ -4854,6 +4838,7 @@ True</p>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_undefined(0)</span>
 <span class="sd">    True</span>
+<span class="sd">    ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">([</span>
         <span class="n">not_null</span><span class="p">(</span><span class="n">a</span><span class="p">),</span>
@@ -4890,23 +4875,18 @@ True</p>
 <p>bool
     False only when a length can be determined AND that length is 0.</p>
 <h3 id="talvez.predicates.not_empty--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not_empty([])
+<pre><code class="language-pycon">&gt;&gt;&gt; not_empty([])
 False
-not_empty([1])
+&gt;&gt;&gt; not_empty([1])
 True
-not_empty("")
+&gt;&gt;&gt; not_empty(&quot;&quot;)
 False
-not_empty("hi")
+&gt;&gt;&gt; not_empty(&quot;hi&quot;)
 True
-class NoLen: pass
-not_empty(NoLen())
-True  # no length concept -&gt; considered not empty</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; class NoLen: pass
+&gt;&gt;&gt; not_empty(NoLen())
+True  # no length concept -&gt; considered not empty
+</code></pre>
 <h3 id="talvez.predicates.not_empty--notes">Notes</h3>
 <p>Choosing to treat objects without a length as "not empty" avoids false
 negatives on scalar values; adjust if your domain requires stricter checks.</p>
@@ -4914,17 +4894,7 @@ negatives on scalar values; adjust if your domain requires stricter checks.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
@@ -4955,7 +4925,19 @@ negatives on scalar values; adjust if your domain requires stricter checks.</p>
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
-<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_empty</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_empty</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return True if the object has a length &gt; 0, or if it has no length concept.</span>
 
@@ -4976,6 +4958,7 @@ negatives on scalar values; adjust if your domain requires stricter checks.</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; not_empty([])</span>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; not_empty([1])</span>
@@ -4987,6 +4970,7 @@ negatives on scalar values; adjust if your domain requires stricter checks.</p>
 <span class="sd">    &gt;&gt;&gt; class NoLen: pass</span>
 <span class="sd">    &gt;&gt;&gt; not_empty(NoLen())</span>
 <span class="sd">    True  # no length concept -&gt; considered not empty</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -5024,19 +5008,14 @@ implementations.</p>
 <p>Predicate
     Composite predicate representing logical conjunction.</p>
 <h3 id="talvez.predicates.and_--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>p = and_(not_null, not_nan, not_infinite)
-p(10)
+<pre><code class="language-pycon">&gt;&gt;&gt; p = and_(not_null, not_nan, not_infinite)
+&gt;&gt;&gt; p(10)
 True
-p(float("nan"))
+&gt;&gt;&gt; p(float(&quot;nan&quot;))
 False
-p(None)
-False</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; p(None)
+False
+</code></pre>
 <h3 id="talvez.predicates.and_--edge-cases">Edge Cases</h3>
 <ul>
 <li>No predicates: returns a predicate that always returns True.</li>
@@ -5045,19 +5024,7 @@ False</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">219</span>
 <span class="normal">220</span>
 <span class="normal">221</span>
 <span class="normal">222</span>
@@ -5087,7 +5054,21 @@ False</p>
 <span class="normal">246</span>
 <span class="normal">247</span>
 <span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">and_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">and_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Logical AND combinator for predicates.</span>
 
@@ -5109,6 +5090,7 @@ False</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; p = and_(not_null, not_nan, not_infinite)</span>
 <span class="sd">    &gt;&gt;&gt; p(10)</span>
 <span class="sd">    True</span>
@@ -5116,6 +5098,7 @@ False</p>
 <span class="sd">    False</span>
 <span class="sd">    &gt;&gt;&gt; p(None)</span>
 <span class="sd">    False</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Edge Cases</span>
 <span class="sd">    ----------</span>
@@ -5155,21 +5138,16 @@ robust.</p>
 <p>Predicate
     Composite predicate representing logical disjunction.</p>
 <h3 id="talvez.predicates.or_--examples">Examples</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>p = or_(not_null, not_empty)
-p(None)
+<pre><code class="language-pycon">&gt;&gt;&gt; p = or_(not_null, not_empty)
+&gt;&gt;&gt; p(None)
 False        # both fail
-p("")
+&gt;&gt;&gt; p(&quot;&quot;)
 False        # not_null OK but empty string -&gt; not_empty False
-p("x")
+&gt;&gt;&gt; p(&quot;x&quot;)
 True
-p([])    # not_null True but empty -&gt; not_empty False -&gt; overall False
-False</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; p([])    # not_null True but empty -&gt; not_empty False -&gt; overall False
+False
+</code></pre>
 <h3 id="talvez.predicates.or_--edge-cases">Edge Cases</h3>
 <ul>
 <li>No predicates: returns a predicate that always returns False.</li>
@@ -5180,21 +5158,7 @@ False</p>
 
             <details class="quote">
               <summary>Source code in <code>src/talvez/predicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span>
-<span class="normal">264</span>
-<span class="normal">265</span>
-<span class="normal">266</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">266</span>
 <span class="normal">267</span>
 <span class="normal">268</span>
 <span class="normal">269</span>
@@ -5228,7 +5192,23 @@ False</p>
 <span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
-<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">or_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">or_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Logical OR combinator for predicates.</span>
 
@@ -5249,6 +5229,7 @@ False</p>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    ```pycon</span>
 <span class="sd">    &gt;&gt;&gt; p = or_(not_null, not_empty)</span>
 <span class="sd">    &gt;&gt;&gt; p(None)</span>
 <span class="sd">    False        # both fail</span>
@@ -5258,6 +5239,7 @@ False</p>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; p([])    # not_null True but empty -&gt; not_empty False -&gt; overall False</span>
 <span class="sd">    False</span>
+<span class="sd">    ```</span>
 
 <span class="sd">    Edge Cases</span>
 <span class="sd">    ----------</span>
@@ -5353,7 +5335,7 @@ failed = pipeline(just(0))       # Nothing
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2025 09:02:25 UTC">September 19, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2025 09:26:37 UTC">September 19, 2025</span>
   </span>
 
     
