@@ -25,7 +25,7 @@
 ## Composition and chaining
 
 ::: talvez.ops.chain
-::: talvez.ops.runner
+::: talvez.ops.compose_maybe
 
 ## Predicates
 
