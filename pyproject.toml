@@ -1,6 +1,6 @@
 [project]
 name = "talvez"
-version = "0.0.1"
+version = "0.0.9"
 description = "A lightweight Python implementation of a Maybe monad"
 readme = "README.md"
 keywords = ["maybe", "functional programming"]
