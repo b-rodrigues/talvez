@@ -1,0 +1,5427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for talvez">
+      
+      
+      
+      
+        <link rel="prev" href="../tutorial/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+    
+    
+      
+        <title>Reference - talvez</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="talvez" class="md-header__button md-logo" aria-label="talvez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            talvez
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/b-rodrigues/talvez" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="talvez" class="md-nav__button md-logo" aria-label="talvez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    talvez
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/b-rodrigues/talvez" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just" class="md-nav__link">
+    <span class="md-ellipsis">
+      Just
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Just">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--truthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truthiness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.is_just" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_just
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.is_nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--raises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      fmap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_or
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_or">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.to_optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_optional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_optional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.to_optional--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.just" class="md-nav__link">
+    <span class="md-ellipsis">
+      just
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="just">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.just--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.just--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      talvez.core.Nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      nothing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nothing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.nothing--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      talvez.core.Maybe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.from_optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_optional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="from_optional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.from_optional--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.from_optional--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      sequence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      perhaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="perhaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--design-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Rationale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composition-and-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition and chaining
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.ops.chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      compose_maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compose_maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_true
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_true">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_null
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_null">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_nan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_nan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_infinite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_infinite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_undefined
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_undefined">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_empty
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-combinators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical combinators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.and_" class="md-nav__link">
+    <span class="md-ellipsis">
+      and_
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="and_">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.or_" class="md-nav__link">
+    <span class="md-ellipsis">
+      or_
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="or_">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-usage-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common usage patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-warning-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error &amp; warning handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interoperability
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just" class="md-nav__link">
+    <span class="md-ellipsis">
+      Just
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Just">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--truthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truthiness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just--transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.is_just" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_just
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.is_nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind" class="md-nav__link">
+    <span class="md-ellipsis">
+      bind
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.bind--raises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      fmap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.fmap--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_or
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_or">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.get_or--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Just.to_optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_optional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="to_optional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.Just.to_optional--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.just" class="md-nav__link">
+    <span class="md-ellipsis">
+      just
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="just">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.just--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.just--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      talvez.core.Nothing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      nothing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nothing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.nothing--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      talvez.core.Maybe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.from_optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_optional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="from_optional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.from_optional--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.from_optional--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.core.sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      sequence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.core.sequence--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.maybe--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      perhaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="perhaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--design-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Rationale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.wrappers.perhaps--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composition-and-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition and chaining
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.ops.chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.chain--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      compose_maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compose_maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.ops.compose_maybe--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_true
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_true">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_true--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_null
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_null">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_null--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_nan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_nan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_nan--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_infinite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_infinite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_infinite--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_undefined
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_undefined">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_undefined--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      not_empty
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="not_empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.not_empty--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-combinators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical combinators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.and_" class="md-nav__link">
+    <span class="md-ellipsis">
+      and_
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="and_">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.and_--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talvez.predicates.or_" class="md-nav__link">
+    <span class="md-ellipsis">
+      or_
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="or_">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talvez.predicates.or_--edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-usage-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common usage patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-warning-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error &amp; warning handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interoperability
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="reference">Reference</h1>
+<h2 id="core-types">Core types</h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="talvez.core.Just"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="typing.Generic">Generic</span>[<span title="talvez.core.T">T</span>]</code></p>
+
+
+        <p>Holds a successfully computed / present value.</p>
+<p>Methods mirror those on <code>_Nothing</code>, but actually apply the provided
+transformations. Failures during mapping or binding gracefully degrade
+to <code>Nothing</code>.</p>
+<h3 id="talvez.core.Just--parameters">Parameters</h3>
+<p>value : T
+    The wrapped payload.</p>
+<h3 id="talvez.core.Just--truthiness">Truthiness</h3>
+<p>Evaluates to True in boolean context:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bool(just(0))
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.core.Just--transformations">Transformations</h3>
+<p>fmap(fn): Apply a pure function, catching exceptions -&gt; Maybe
+bind(fn): Chain a Maybe-returning function, validating return type</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/talvez/core.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Just</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Holds a successfully computed / present value.</span>
+
+<span class="sd">    Methods mirror those on `_Nothing`, but actually apply the provided</span>
+<span class="sd">    transformations. Failures during mapping or binding gracefully degrade</span>
+<span class="sd">    to `Nothing`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : T</span>
+<span class="sd">        The wrapped payload.</span>
+
+<span class="sd">    Truthiness</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Evaluates to True in boolean context:</span>
+<span class="sd">    &gt;&gt;&gt; bool(just(0))</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Transformations</span>
+<span class="sd">    ---------------</span>
+<span class="sd">    fmap(fn): Apply a pure function, catching exceptions -&gt; Maybe</span>
+<span class="sd">    bind(fn): Chain a Maybe-returning function, validating return type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span><span class="p">:</span> <span class="n">T</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># pragma: no cover - trivial</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Just(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">!r}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Transformations -------------------------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply a pure function to the contained value.</span>
+
+<span class="sd">        Exceptions raised by `fn` cause the result to become `Nothing`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fn : Callable[[T], U]</span>
+<span class="sd">            Pure transformation function.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Maybe[U]</span>
+<span class="sd">            Just of transformed value, or Nothing on exception.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">just</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Nothing</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Chain a function returning another Maybe (monadic bind).</span>
+
+<span class="sd">        Enforces that `fn` returns either a `Just` or `Nothing`; any</span>
+<span class="sd">        other return type results in `Nothing`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fn : Callable[[T], Maybe[U]]</span>
+<span class="sd">            Function returning a Maybe.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Maybe[U]</span>
+<span class="sd">            Result of `fn(self.value)` or Nothing on error / type mismatch.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        (internally caught)</span>
+<span class="sd">            Any exception from `fn` results in Nothing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="n">Just</span><span class="p">,</span> <span class="n">_Nothing</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;bind function must return a Maybe&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Nothing</span>
+
+    <span class="c1"># Extraction ------------------------------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the wrapped value (ignoring the default).</span>
+
+<span class="sd">        Provided for API symmetry with `_Nothing.get_or`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        default : U</span>
+<span class="sd">            (Unused) placeholder for symmetry.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        T</span>
+<span class="sd">            The contained value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert to a standard Optional (always the underlying value here).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Optional[T]</span>
+<span class="sd">            The contained value (never None unless it was explicitly None).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="c1"># Introspection ---------------------------------------------------</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_nothing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return False (this is a Just).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_just</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True (this is a Just).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="talvez.core.Just.is_just" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">is_just</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return True (this is a Just).</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="talvez.core.Just.is_nothing" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">is_nothing</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return False (this is a Just).</p>
+
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="talvez.core.Just.bind" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bind</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Chain a function returning another Maybe (monadic bind).</p>
+<p>Enforces that <code>fn</code> returns either a <code>Just</code> or <code>Nothing</code>; any
+other return type results in <code>Nothing</code>.</p>
+<h4 id="talvez.core.Just.bind--parameters">Parameters</h4>
+<p>fn : Callable[[T], Maybe[U]]
+    Function returning a Maybe.</p>
+<h4 id="talvez.core.Just.bind--returns">Returns</h4>
+<p>Maybe[U]
+    Result of <code>fn(self.value)</code> or Nothing on error / type mismatch.</p>
+<h4 id="talvez.core.Just.bind--raises">Raises</h4>
+<p>(internally caught)
+    Any exception from <code>fn</code> results in Nothing.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Chain a function returning another Maybe (monadic bind).</span>
+
+<span class="sd">    Enforces that `fn` returns either a `Just` or `Nothing`; any</span>
+<span class="sd">    other return type results in `Nothing`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fn : Callable[[T], Maybe[U]]</span>
+<span class="sd">        Function returning a Maybe.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe[U]</span>
+<span class="sd">        Result of `fn(self.value)` or Nothing on error / type mismatch.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    (internally caught)</span>
+<span class="sd">        Any exception from `fn` results in Nothing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="n">Just</span><span class="p">,</span> <span class="n">_Nothing</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;bind function must return a Maybe&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Nothing</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="talvez.core.Just.fmap" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fmap</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply a pure function to the contained value.</p>
+<p>Exceptions raised by <code>fn</code> cause the result to become <code>Nothing</code>.</p>
+<h4 id="talvez.core.Just.fmap--parameters">Parameters</h4>
+<p>fn : Callable[[T], U]
+    Pure transformation function.</p>
+<h4 id="talvez.core.Just.fmap--returns">Returns</h4>
+<p>Maybe[U]
+    Just of transformed value, or Nothing on exception.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">],</span> <span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Maybe[U]&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply a pure function to the contained value.</span>
+
+<span class="sd">    Exceptions raised by `fn` cause the result to become `Nothing`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fn : Callable[[T], U]</span>
+<span class="sd">        Pure transformation function.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe[U]</span>
+<span class="sd">        Just of transformed value, or Nothing on exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">just</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Nothing</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="talvez.core.Just.get_or" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_or</span><span class="p">(</span><span class="n">default</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the wrapped value (ignoring the default).</p>
+<p>Provided for API symmetry with <code>_Nothing.get_or</code>.</p>
+<h4 id="talvez.core.Just.get_or--parameters">Parameters</h4>
+<p>default : U
+    (Unused) placeholder for symmetry.</p>
+<h4 id="talvez.core.Just.get_or--returns">Returns</h4>
+<p>T
+    The contained value.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the wrapped value (ignoring the default).</span>
+
+<span class="sd">    Provided for API symmetry with `_Nothing.get_or`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    default : U</span>
+<span class="sd">        (Unused) placeholder for symmetry.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    T</span>
+<span class="sd">        The contained value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="talvez.core.Just.to_optional" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_optional</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert to a standard Optional (always the underlying value here).</p>
+<h4 id="talvez.core.Just.to_optional--returns">Returns</h4>
+<p>Optional[T]
+    The contained value (never None unless it was explicitly None).</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert to a standard Optional (always the underlying value here).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Optional[T]</span>
+<span class="sd">        The contained value (never None unless it was explicitly None).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.core.just"></a>
+    <div class="doc doc-contents first">
+
+        <p>Wrap a raw value into a <code>Just</code>.</p>
+<h3 id="talvez.core.just--parameters">Parameters</h3>
+<p>a : T
+    Value to wrap.</p>
+<h3 id="talvez.core.just--returns">Returns</h3>
+<p>Just[T]
+    A Maybe representing presence.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">just</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Just</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wrap a raw value into a `Just`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : T</span>
+<span class="sd">        Value to wrap.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Just[T]</span>
+<span class="sd">        A Maybe representing presence.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Just</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<a id="talvez.core.Nothing"></a>
+    <div class="doc doc-contents first">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.core.nothing"></a>
+    <div class="doc doc-contents first">
+
+        <p>Obtain the <code>Nothing</code> sentinel.</p>
+<h3 id="talvez.core.nothing--returns">Returns</h3>
+<p>_Nothing
+    The shared singleton representing absence.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">nothing</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">_Nothing</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Obtain the `Nothing` sentinel.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    _Nothing</span>
+<span class="sd">        The shared singleton representing absence.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Nothing</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<a id="talvez.core.Maybe"></a>
+    <div class="doc doc-contents first">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.core.from_optional"></a>
+    <div class="doc doc-contents first">
+
+        <p>Convert a standard Optional into a Maybe.</p>
+<h3 id="talvez.core.from_optional--parameters">Parameters</h3>
+<p>opt : Optional[T]
+    An optional value (None indicates absence).</p>
+<h3 id="talvez.core.from_optional--returns">Returns</h3>
+<p>Maybe[T]
+    <code>Just(opt)</code> if not None, else <code>Nothing</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_optional</span><span class="p">(</span><span class="n">opt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a standard Optional into a Maybe.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    opt : Optional[T]</span>
+<span class="sd">        An optional value (None indicates absence).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe[T]</span>
+<span class="sd">        `Just(opt)` if not None, else `Nothing`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">nothing</span><span class="p">()</span> <span class="k">if</span> <span class="n">opt</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">just</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.core.sequence"></a>
+    <div class="doc doc-contents first">
+
+        <p>Turn an iterator of Maybe values into a Maybe of a list.</p>
+<p>Short-circuits to <code>Nothing</code> if any element is <code>Nothing</code>; otherwise
+collects unwrapped values into a list.</p>
+<h3 id="talvez.core.sequence--parameters">Parameters</h3>
+<p>maybes : Iterator[Maybe[T]]
+    Iterator yielding Maybe values.</p>
+<h3 id="talvez.core.sequence--returns">Returns</h3>
+<p>Maybe[list[T]]
+    Just of collected values if all succeed, else Nothing.</p>
+<h3 id="talvez.core.sequence--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sequence(iter([just(1), just(2)])).get_or([])
+[1, 2]
+sequence(iter([just(1), nothing(), just(3)])).is_nothing
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sequence</span><span class="p">(</span><span class="n">maybes</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Turn an iterator of Maybe values into a Maybe of a list.</span>
+
+<span class="sd">    Short-circuits to `Nothing` if any element is `Nothing`; otherwise</span>
+<span class="sd">    collects unwrapped values into a list.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    maybes : Iterator[Maybe[T]]</span>
+<span class="sd">        Iterator yielding Maybe values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe[list[T]]</span>
+<span class="sd">        Just of collected values if all succeed, else Nothing.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; sequence(iter([just(1), just(2)])).get_or([])</span>
+<span class="sd">    [1, 2]</span>
+<span class="sd">    &gt;&gt;&gt; sequence(iter([just(1), nothing(), just(3)])).is_nothing</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">maybes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">_Nothing</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Nothing</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="k">return</span> <span class="n">just</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="decorators">Decorators</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.wrappers.maybe"></a>
+    <div class="doc doc-contents first">
+
+        <p>Decorator factory: wrap a function so it returns a Maybe (Just / Nothing).</p>
+
+
+<details class="the-wrapped-function-is-executed-inside-a-protective-layer-that" open>
+  <summary>The wrapped function is executed inside a protective layer that</summary>
+  <ol>
+<li>Captures exceptions -&gt; returns <code>Nothing</code></li>
+<li>Optionally treats warnings as failures (<code>allow_warning=False</code>)</li>
+<li>Applies an <code>ensure</code> predicate to the result; non-True -&gt; <code>Nothing</code></li>
+<li>Returns <code>Just(result)</code> on success</li>
+</ol>
+</details>        <p>IMPORTANT: The <code>ensure</code> predicate must return the literal boolean <code>True</code>
+for acceptance. Returning any other truthy object (e.g., 1, non-empty list)
+will be considered failure because <code>talvez.predicates.not_true</code> checks for
+identity with <code>True</code>. This enforces discipline and avoids accidental
+truthiness bugs.</p>
+<h3 id="talvez.wrappers.maybe--parameters">Parameters</h3>
+<p>ensure : Optional[Callable[[Any], bool]], default=None
+    Predicate applied to the successful raw result. If omitted, all results
+    are accepted. If the predicate raises an exception or returns anything
+    other than the literal <code>True</code>, the outcome becomes <code>Nothing</code>.
+allow_warning : bool, default=False
+    If False, any warning raised during execution causes the decorator to
+    return <code>Nothing</code>. If True, warnings are ignored.</p>
+<h3 id="talvez.wrappers.maybe--returns">Returns</h3>
+<p>Callable[[Callable[..., T]], Callable[..., Maybe[T]]]
+    A decorator that transforms a function returning T into one returning
+    <code>Maybe[T]</code>.</p>
+<h3 id="talvez.wrappers.maybe--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from talvez import just, nothing
+@maybe()
+... def parse_int(s: str) -&gt; int:
+...     return int(s)
+...
+parse_int("10").get_or(None)
+10
+parse_int("x").is_nothing
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>With an ensure predicate:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>@maybe(ensure=lambda v: v &gt; 0)
+... def delta(x): return x - 1
+...
+delta(5).is_just
+True
+delta(0).is_nothing   # ensure failed (returns -1)
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Handling warnings:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import warnings
+@maybe(allow_warning=False)
+... def risky():
+...     warnings.warn("deprecated")
+...     return 42
+...
+risky().is_nothing
+True
+@maybe(allow_warning=True)
+... def tolerant():
+...     warnings.warn("deprecated")
+...     return 42
+...
+tolerant().get_or(None)
+42</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.wrappers.maybe--edge-cases">Edge Cases</h3>
+<ul>
+<li>Exception in function: returns <code>Nothing</code></li>
+<li>Exception in ensure predicate: returns <code>Nothing</code></li>
+<li>Warning + allow_warning=False: returns <code>Nothing</code></li>
+<li>Function returns None and ensure not provided: wraps as Just(None)
+  (use ensure to reject None if undesired).</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/wrappers.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">maybe</span><span class="p">(</span>
+    <span class="n">ensure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">allow_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator factory: wrap a function so it returns a Maybe (Just / Nothing).</span>
+
+<span class="sd">    The wrapped function is executed inside a protective layer that:</span>
+<span class="sd">      1. Captures exceptions -&gt; returns `Nothing`</span>
+<span class="sd">      2. Optionally treats warnings as failures (`allow_warning=False`)</span>
+<span class="sd">      3. Applies an `ensure` predicate to the result; non-True -&gt; `Nothing`</span>
+<span class="sd">      4. Returns `Just(result)` on success</span>
+
+<span class="sd">    IMPORTANT: The `ensure` predicate must return the literal boolean `True`</span>
+<span class="sd">    for acceptance. Returning any other truthy object (e.g., 1, non-empty list)</span>
+<span class="sd">    will be considered failure because `talvez.predicates.not_true` checks for</span>
+<span class="sd">    identity with `True`. This enforces discipline and avoids accidental</span>
+<span class="sd">    truthiness bugs.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ensure : Optional[Callable[[Any], bool]], default=None</span>
+<span class="sd">        Predicate applied to the successful raw result. If omitted, all results</span>
+<span class="sd">        are accepted. If the predicate raises an exception or returns anything</span>
+<span class="sd">        other than the literal `True`, the outcome becomes `Nothing`.</span>
+<span class="sd">    allow_warning : bool, default=False</span>
+<span class="sd">        If False, any warning raised during execution causes the decorator to</span>
+<span class="sd">        return `Nothing`. If True, warnings are ignored.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Callable[[Callable[..., T]], Callable[..., Maybe[T]]]</span>
+<span class="sd">        A decorator that transforms a function returning T into one returning</span>
+<span class="sd">        `Maybe[T]`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
+<span class="sd">    &gt;&gt;&gt; @maybe()</span>
+<span class="sd">    ... def parse_int(s: str) -&gt; int:</span>
+<span class="sd">    ...     return int(s)</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; parse_int(&quot;10&quot;).get_or(None)</span>
+<span class="sd">    10</span>
+<span class="sd">    &gt;&gt;&gt; parse_int(&quot;x&quot;).is_nothing</span>
+<span class="sd">    True</span>
+
+<span class="sd">    With an ensure predicate:</span>
+
+<span class="sd">    &gt;&gt;&gt; @maybe(ensure=lambda v: v &gt; 0)</span>
+<span class="sd">    ... def delta(x): return x - 1</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; delta(5).is_just</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; delta(0).is_nothing   # ensure failed (returns -1)</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Handling warnings:</span>
+
+<span class="sd">    &gt;&gt;&gt; import warnings</span>
+<span class="sd">    &gt;&gt;&gt; @maybe(allow_warning=False)</span>
+<span class="sd">    ... def risky():</span>
+<span class="sd">    ...     warnings.warn(&quot;deprecated&quot;)</span>
+<span class="sd">    ...     return 42</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; risky().is_nothing</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; @maybe(allow_warning=True)</span>
+<span class="sd">    ... def tolerant():</span>
+<span class="sd">    ...     warnings.warn(&quot;deprecated&quot;)</span>
+<span class="sd">    ...     return 42</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; tolerant().get_or(None)</span>
+<span class="sd">    42</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - Exception in function: returns `Nothing`</span>
+<span class="sd">    - Exception in ensure predicate: returns `Nothing`</span>
+<span class="sd">    - Warning + allow_warning=False: returns `Nothing`</span>
+<span class="sd">    - Function returns None and ensure not provided: wraps as Just(None)</span>
+<span class="sd">      (use ensure to reject None if undesired).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ensure_fn</span> <span class="o">=</span> <span class="n">ensure</span> <span class="k">if</span> <span class="n">ensure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">_with_warning_capture</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">allow_warning</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">nothing</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">not_true</span><span class="p">(</span><span class="n">ensure_fn</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+                    <span class="k">return</span> <span class="n">nothing</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">nothing</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">just</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapped</span>
+    <span class="k">return</span> <span class="n">deco</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.wrappers.perhaps"></a>
+    <div class="doc doc-contents first">
+
+        <p>Decorator factory: wrap a function so it returns a raw value with fallback.</p>
+<p>Unlike <code>maybe</code>, this returns the successful result directly, or a
+user-specified <code>default</code> on failure. Failure conditions mirror <code>maybe</code>:
+  - Exception raised
+  - Warning emitted (if <code>allow_warning=False</code>)
+  - Ensure predicate not returning literal True
+  - Ensure predicate raising an exception</p>
+<h3 id="talvez.wrappers.perhaps--parameters">Parameters</h3>
+<p>default : Any
+    The value returned when the wrapped function "fails". Should be a
+    sensible sentinel consistent with your domain.
+ensure : Optional[Callable[[Any], bool]], default=None
+    Predicate validating the raw result. Must return the literal True to
+    accept; any other outcome triggers the fallback.
+allow_warning : bool, default=False
+    If False, any warning turns the result into <code>default</code>. If True, warnings
+    are ignored.</p>
+<h3 id="talvez.wrappers.perhaps--returns">Returns</h3>
+<p>Callable[[Callable[..., T]], Callable[..., Any]]
+    A decorator that converts a function returning T into one returning
+    T-or-default.</p>
+<h3 id="talvez.wrappers.perhaps--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>@perhaps(default=0)
+... def safe_div(a, b): return a / b
+...
+safe_div(10, 2)
+5.0
+safe_div(10, 0)
+0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>With ensure:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>@perhaps(default=None, ensure=lambda v: v &gt; 10)
+... def compute(x): return x * 3
+...
+compute(5)
+15
+compute(3)  # 3*3 = 9 -&gt; ensure fails
+None</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Warning handling:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import warnings
+@perhaps(default=-1, allow_warning=False)
+... def noisy():
+...     warnings.warn("careful")
+...     return 99
+...
+noisy()
+-1</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.wrappers.perhaps--design-rationale">Design Rationale</h3>
+<p>Use <code>perhaps</code> when you want ergonomic fallback semantics without having to
+manipulate a Maybe object explicitly, for contexts where sentinel defaults
+are acceptable and clearly documented.</p>
+<h3 id="talvez.wrappers.perhaps--edge-cases">Edge Cases</h3>
+<ul>
+<li>If the function legitimately returns a value equal to <code>default</code>, you
+  cannot distinguish fallback vs success—choose a unique sentinel if needed.</li>
+<li>As with <code>maybe</code>, ensure must return literal True (not just truthy).</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/wrappers.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">perhaps</span><span class="p">(</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">ensure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">allow_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator factory: wrap a function so it returns a raw value with fallback.</span>
+
+<span class="sd">    Unlike `maybe`, this returns the successful result directly, or a</span>
+<span class="sd">    user-specified `default` on failure. Failure conditions mirror `maybe`:</span>
+<span class="sd">      - Exception raised</span>
+<span class="sd">      - Warning emitted (if `allow_warning=False`)</span>
+<span class="sd">      - Ensure predicate not returning literal True</span>
+<span class="sd">      - Ensure predicate raising an exception</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    default : Any</span>
+<span class="sd">        The value returned when the wrapped function &quot;fails&quot;. Should be a</span>
+<span class="sd">        sensible sentinel consistent with your domain.</span>
+<span class="sd">    ensure : Optional[Callable[[Any], bool]], default=None</span>
+<span class="sd">        Predicate validating the raw result. Must return the literal True to</span>
+<span class="sd">        accept; any other outcome triggers the fallback.</span>
+<span class="sd">    allow_warning : bool, default=False</span>
+<span class="sd">        If False, any warning turns the result into `default`. If True, warnings</span>
+<span class="sd">        are ignored.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Callable[[Callable[..., T]], Callable[..., Any]]</span>
+<span class="sd">        A decorator that converts a function returning T into one returning</span>
+<span class="sd">        T-or-default.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; @perhaps(default=0)</span>
+<span class="sd">    ... def safe_div(a, b): return a / b</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; safe_div(10, 2)</span>
+<span class="sd">    5.0</span>
+<span class="sd">    &gt;&gt;&gt; safe_div(10, 0)</span>
+<span class="sd">    0</span>
+
+<span class="sd">    With ensure:</span>
+
+<span class="sd">    &gt;&gt;&gt; @perhaps(default=None, ensure=lambda v: v &gt; 10)</span>
+<span class="sd">    ... def compute(x): return x * 3</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; compute(5)</span>
+<span class="sd">    15</span>
+<span class="sd">    &gt;&gt;&gt; compute(3)  # 3*3 = 9 -&gt; ensure fails</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Warning handling:</span>
+
+<span class="sd">    &gt;&gt;&gt; import warnings</span>
+<span class="sd">    &gt;&gt;&gt; @perhaps(default=-1, allow_warning=False)</span>
+<span class="sd">    ... def noisy():</span>
+<span class="sd">    ...     warnings.warn(&quot;careful&quot;)</span>
+<span class="sd">    ...     return 99</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; noisy()</span>
+<span class="sd">    -1</span>
+
+<span class="sd">    Design Rationale</span>
+<span class="sd">    ----------------</span>
+<span class="sd">    Use `perhaps` when you want ergonomic fallback semantics without having to</span>
+<span class="sd">    manipulate a Maybe object explicitly, for contexts where sentinel defaults</span>
+<span class="sd">    are acceptable and clearly documented.</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - If the function legitimately returns a value equal to `default`, you</span>
+<span class="sd">      cannot distinguish fallback vs success—choose a unique sentinel if needed.</span>
+<span class="sd">    - As with `maybe`, ensure must return literal True (not just truthy).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ensure_fn</span> <span class="o">=</span> <span class="n">ensure</span> <span class="k">if</span> <span class="n">ensure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">_with_warning_capture</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">allow_warning</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">default</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">not_true</span><span class="p">(</span><span class="n">ensure_fn</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+                    <span class="k">return</span> <span class="n">default</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">default</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">wrapped</span>
+    <span class="k">return</span> <span class="n">deco</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><div class="admonition note">
+<p class="admonition-title">ensure predicate behavior</p>
+<p>The <code>ensure</code> callable MUST return the literal boolean <code>True</code> (not just a truthy value) for a result to be accepted. Anything else (False, 1, [], object()) is treated as failure. This is enforced via the <code>not_true</code> predicate for defensive programming.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Choosing between maybe() and perhaps()</p>
+<ul>
+<li>Use <code>@maybe()</code> when you want explicit <code>Just</code> / <code>Nothing</code> handling.</li>
+<li>Use <code>@perhaps(default=...)</code> when a sentinel fallback is more ergonomic.</li>
+</ul>
+</div>
+<h2 id="composition-and-chaining">Composition and chaining</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.ops.chain"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sequentially apply a series of Maybe-producing functions, short-circuiting on the first failure.</p>
+<p>This function implements a left-to-right monadic bind chain. It starts with an
+initial Maybe <code>m</code> and applies each function in <code>fns</code> to the unwrapped value
+of the current <code>Just</code> (via <code>bind</code>). If at any point the current value is
+<code>Nothing</code>, evaluation stops early and <code>Nothing</code> is returned.</p>
+<h3 id="talvez.ops.chain--parameters">Parameters</h3>
+<p>m : Maybe[Any]
+    The initial Maybe value (typically <code>just(x)</code> or <code>nothing()</code>).
+*fns : Callable[[Any], Maybe[Any]]
+    A variadic sequence of functions. Each function must accept the unwrapped
+    value from the previous <code>Just</code> and return a new <code>Maybe</code>.</p>
+<h3 id="talvez.ops.chain--returns">Returns</h3>
+<p>Maybe[Any]
+    The resulting Maybe after applying all functions, or the first <code>Nothing</code>
+    encountered.</p>
+<h3 id="talvez.ops.chain--notes">Notes</h3>
+<ul>
+<li>This is analogous to a fold/ reduce over monadic bind operations.</li>
+<li>Functions are only invoked if the current accumulator is a <code>Just</code>.</li>
+<li>Any function returning <code>Nothing</code> halts further processing.</li>
+</ul>
+<h3 id="talvez.ops.chain--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from talvez import just, nothing
+def parse_int(s: str):
+...     try:
+...         return just(int(s))
+...     except ValueError:
+...         return nothing()
+...
+def reciprocal(x: int):
+...     return nothing() if x == 0 else just(1 / x)
+...
+chain(just("10"), parse_int, reciprocal).get_or(None)
+0.1
+chain(just("foo"), parse_int, reciprocal).is_nothing
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.ops.chain--edge-cases">Edge Cases</h3>
+<ul>
+<li>Passing no functions: returns the original <code>m</code>.</li>
+<li>If <code>m</code> is already <code>Nothing</code>, no functions are executed.</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/ops.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">chain</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sequentially apply a series of Maybe-producing functions, short-circuiting on the first failure.</span>
+
+<span class="sd">    This function implements a left-to-right monadic bind chain. It starts with an</span>
+<span class="sd">    initial Maybe `m` and applies each function in `fns` to the unwrapped value</span>
+<span class="sd">    of the current `Just` (via `bind`). If at any point the current value is</span>
+<span class="sd">    `Nothing`, evaluation stops early and `Nothing` is returned.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m : Maybe[Any]</span>
+<span class="sd">        The initial Maybe value (typically `just(x)` or `nothing()`).</span>
+<span class="sd">    *fns : Callable[[Any], Maybe[Any]]</span>
+<span class="sd">        A variadic sequence of functions. Each function must accept the unwrapped</span>
+<span class="sd">        value from the previous `Just` and return a new `Maybe`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe[Any]</span>
+<span class="sd">        The resulting Maybe after applying all functions, or the first `Nothing`</span>
+<span class="sd">        encountered.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - This is analogous to a fold/ reduce over monadic bind operations.</span>
+<span class="sd">    - Functions are only invoked if the current accumulator is a `Just`.</span>
+<span class="sd">    - Any function returning `Nothing` halts further processing.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
+<span class="sd">    &gt;&gt;&gt; def parse_int(s: str):</span>
+<span class="sd">    ...     try:</span>
+<span class="sd">    ...         return just(int(s))</span>
+<span class="sd">    ...     except ValueError:</span>
+<span class="sd">    ...         return nothing()</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; def reciprocal(x: int):</span>
+<span class="sd">    ...     return nothing() if x == 0 else just(1 / x)</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; chain(just(&quot;10&quot;), parse_int, reciprocal).get_or(None)</span>
+<span class="sd">    0.1</span>
+<span class="sd">    &gt;&gt;&gt; chain(just(&quot;foo&quot;), parse_int, reciprocal).is_nothing</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - Passing no functions: returns the original `m`.</span>
+<span class="sd">    - If `m` is already `Nothing`, no functions are executed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">current</span><span class="p">:</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">fns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">is_nothing</span><span class="p">:</span>  <span class="c1"># type: ignore[attr-defined]</span>
+            <span class="k">break</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
+    <span class="k">return</span> <span class="n">current</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.ops.compose_maybe"></a>
+    <div class="doc doc-contents first">
+
+        <p>Compose multiple Maybe-producing functions into a reusable pipeline.</p>
+<p>Returns a new function that expects an initial <code>Maybe</code> and applies the
+provided functions in order using <code>chain</code>. This is useful when you want to
+define a processing pipeline once and reuse it across different starting
+values.</p>
+<h3 id="talvez.ops.compose_maybe--parameters">Parameters</h3>
+<p>*fns : Callable[[Any], Maybe[Any]]
+    A sequence of functions, each taking a plain (unwrapped) value and
+    returning a <code>Maybe</code>.</p>
+<h3 id="talvez.ops.compose_maybe--returns">Returns</h3>
+<p>Callable[[Maybe[Any]], Maybe[Any]]
+    A function that, given an initial <code>Maybe</code>, applies the pipeline.</p>
+<h3 id="talvez.ops.compose_maybe--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from talvez import just, nothing
+def non_empty(s: str):
+...     return just(s) if s else nothing()
+...
+def to_int(s: str):
+...     try:
+...         return just(int(s))
+...     except ValueError:
+...         return nothing()
+...
+def positive(x: int):
+...         return just(x) if x &gt; 0 else nothing()
+...
+pipeline = compose_maybe(non_empty, to_int, positive)
+pipeline(just("42")).get_or(None)
+42
+pipeline(just("")).is_nothing
+True
+pipeline(just("-5")).is_nothing
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.ops.compose_maybe--comparison">Comparison</h3>
+<p>This:
+    pipeline = compose_maybe(f1, f2, f3)
+    result = pipeline(just(x))
+Is equivalent to:
+    result = chain(just(x), f1, f2, f3)</p>
+<h3 id="talvez.ops.compose_maybe--edge-cases">Edge Cases</h3>
+<ul>
+<li>If no functions are provided, the returned runner is the identity on <code>Maybe</code>.</li>
+<li>Fail-fast semantics are inherited from <code>chain</code>.</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/ops.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compose_maybe</span><span class="p">(</span><span class="o">*</span><span class="n">fns</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compose multiple Maybe-producing functions into a reusable pipeline.</span>
+
+<span class="sd">    Returns a new function that expects an initial `Maybe` and applies the</span>
+<span class="sd">    provided functions in order using `chain`. This is useful when you want to</span>
+<span class="sd">    define a processing pipeline once and reuse it across different starting</span>
+<span class="sd">    values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *fns : Callable[[Any], Maybe[Any]]</span>
+<span class="sd">        A sequence of functions, each taking a plain (unwrapped) value and</span>
+<span class="sd">        returning a `Maybe`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Callable[[Maybe[Any]], Maybe[Any]]</span>
+<span class="sd">        A function that, given an initial `Maybe`, applies the pipeline.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from talvez import just, nothing</span>
+<span class="sd">    &gt;&gt;&gt; def non_empty(s: str):</span>
+<span class="sd">    ...     return just(s) if s else nothing()</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; def to_int(s: str):</span>
+<span class="sd">    ...     try:</span>
+<span class="sd">    ...         return just(int(s))</span>
+<span class="sd">    ...     except ValueError:</span>
+<span class="sd">    ...         return nothing()</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; def positive(x: int):</span>
+<span class="sd">    ...         return just(x) if x &gt; 0 else nothing()</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; pipeline = compose_maybe(non_empty, to_int, positive)</span>
+<span class="sd">    &gt;&gt;&gt; pipeline(just(&quot;42&quot;)).get_or(None)</span>
+<span class="sd">    42</span>
+<span class="sd">    &gt;&gt;&gt; pipeline(just(&quot;&quot;)).is_nothing</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; pipeline(just(&quot;-5&quot;)).is_nothing</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Comparison</span>
+<span class="sd">    ----------</span>
+<span class="sd">    This:</span>
+<span class="sd">        pipeline = compose_maybe(f1, f2, f3)</span>
+<span class="sd">        result = pipeline(just(x))</span>
+<span class="sd">    Is equivalent to:</span>
+<span class="sd">        result = chain(just(x), f1, f2, f3)</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - If no functions are provided, the returned runner is the identity on `Maybe`.</span>
+<span class="sd">    - Fail-fast semantics are inherited from `chain`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">runner</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Maybe</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">chain</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="o">*</span><span class="n">fns</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">runner</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="predicates">Predicates</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_true"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return True if the argument is NOT the literal boolean True.</p>
+<p>This helper is intentionally strict: it only treats the single object <code>True</code>
+as true-ish for the negation test. Any other truthy value (e.g., 1, "yes",
+non‑empty containers) returns True because it is not the singleton <code>True</code>.</p>
+<h3 id="talvez.predicates.not_true--parameters">Parameters</h3>
+<p>x : Any
+    Value to test for identity with the boolean <code>True</code>.</p>
+<h3 id="talvez.predicates.not_true--returns">Returns</h3>
+<p>bool
+    False only when <code>x is True</code>; True otherwise.</p>
+<h3 id="talvez.predicates.not_true--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_true(True)
+False
+not_true(False)
+True
+not_true(1)
+True
+not_true("anything")
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.predicates.not_true--notes">Notes</h3>
+<p>This function is used internally to implement other predicates without
+conflating general truthiness with strict identity to <code>True</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_true</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if the argument is NOT the literal boolean True.</span>
+
+<span class="sd">    This helper is intentionally strict: it only treats the single object `True`</span>
+<span class="sd">    as true-ish for the negation test. Any other truthy value (e.g., 1, &quot;yes&quot;,</span>
+<span class="sd">    non‑empty containers) returns True because it is not the singleton `True`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : Any</span>
+<span class="sd">        Value to test for identity with the boolean `True`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        False only when `x is True`; True otherwise.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_true(True)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_true(False)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_true(1)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_true(&quot;anything&quot;)</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function is used internally to implement other predicates without</span>
+<span class="sd">    conflating general truthiness with strict identity to `True`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_null"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return True if the value is not None.</p>
+<h3 id="talvez.predicates.not_null--parameters">Parameters</h3>
+<p>a : Any
+    Value to check.</p>
+<h3 id="talvez.predicates.not_null--returns">Returns</h3>
+<p>bool
+    True if <code>a is not None</code>, False otherwise.</p>
+<h3 id="talvez.predicates.not_null--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_null(None)
+False
+not_null(0)
+True
+not_null("")
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_null</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if the value is not None.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : Any</span>
+<span class="sd">        Value to check.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if `a is not None`, False otherwise.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_null(None)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_null(0)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_null(&quot;&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Intentionally phrased via not_true for internal stylistic consistency.</span>
+    <span class="k">return</span> <span class="n">not_true</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_nan"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return True if the value is NOT a floating-point NaN (Not-a-Number).</p>
+<h3 id="talvez.predicates.not_nan--parameters">Parameters</h3>
+<p>a : Any
+    Value to check. Only floats are considered; other types return True.</p>
+<h3 id="talvez.predicates.not_nan--returns">Returns</h3>
+<p>bool
+    False only when <code>a</code> is a float and <code>math.isnan(a)</code> is True.</p>
+<h3 id="talvez.predicates.not_nan--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_nan(float("nan"))
+False
+not_nan(3.14)
+True
+not_nan("nan")
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_nan</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if the value is NOT a floating-point NaN (Not-a-Number).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : Any</span>
+<span class="sd">        Value to check. Only floats are considered; other types return True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        False only when `a` is a float and `math.isnan(a)` is True.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_nan(float(&quot;nan&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_nan(3.14)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_nan(&quot;nan&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_infinite"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return True if the value is not positive or negative infinity.</p>
+<h3 id="talvez.predicates.not_infinite--parameters">Parameters</h3>
+<p>a : Any
+    Value to check. Only ints/floats are considered for +/- infinity.</p>
+<h3 id="talvez.predicates.not_infinite--returns">Returns</h3>
+<p>bool
+    False when <code>a</code> is +inf or -inf (as a numeric); True otherwise.</p>
+<h3 id="talvez.predicates.not_infinite--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_infinite(float("inf"))
+False
+not_infinite(float("-inf"))
+False
+not_infinite(42)
+True
+not_infinite("inf")
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_infinite</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if the value is not positive or negative infinity.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : Any</span>
+<span class="sd">        Value to check. Only ints/floats are considered for +/- infinity.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        False when `a` is +inf or -inf (as a numeric); True otherwise.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_infinite(float(&quot;inf&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_infinite(float(&quot;-inf&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_infinite(42)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_infinite(&quot;inf&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_undefined"></a>
+    <div class="doc doc-contents first">
+
+        <p>Composite predicate: value is neither None, NaN, nor infinite.</p>
+
+
+<details class="this-is-a-convenience-aggregator-combining" open>
+  <summary>This is a convenience aggregator combining</summary>
+  <ul>
+<li>not_null</li>
+<li>not_nan</li>
+<li>not_infinite</li>
+</ul>
+</details>        <h3 id="talvez.predicates.not_undefined--parameters">Parameters</h3>
+<p>a : Any
+    Value to test.</p>
+<h3 id="talvez.predicates.not_undefined--returns">Returns</h3>
+<p>bool
+    True only if all component predicates pass.</p>
+<h3 id="talvez.predicates.not_undefined--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_undefined(None)
+False
+not_undefined(float("nan"))
+False
+not_undefined(float("inf"))
+False
+not_undefined(0)
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_undefined</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Composite predicate: value is neither None, NaN, nor infinite.</span>
+
+<span class="sd">    This is a convenience aggregator combining:</span>
+<span class="sd">      - not_null</span>
+<span class="sd">      - not_nan</span>
+<span class="sd">      - not_infinite</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : Any</span>
+<span class="sd">        Value to test.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True only if all component predicates pass.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_undefined(None)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_undefined(float(&quot;nan&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_undefined(float(&quot;inf&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_undefined(0)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">([</span>
+        <span class="n">not_null</span><span class="p">(</span><span class="n">a</span><span class="p">),</span>
+        <span class="n">not_nan</span><span class="p">(</span><span class="n">a</span><span class="p">),</span>
+        <span class="n">not_infinite</span><span class="p">(</span><span class="n">a</span><span class="p">),</span>
+    <span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.not_empty"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return True if the object has a length &gt; 0, or if it has no length concept.</p>
+
+
+<details class="semantics" open>
+  <summary>Semantics</summary>
+  <ul>
+<li>If the object implements <strong>len</strong>, returns len(a) &gt; 0.</li>
+<li>If it does not (AttributeError / TypeError), treats it as "not empty"
+  and returns True (optimistic / permissive behavior).</li>
+</ul>
+</details>        <h3 id="talvez.predicates.not_empty--parameters">Parameters</h3>
+<p>a : Any
+    Value or container to check.</p>
+<h3 id="talvez.predicates.not_empty--returns">Returns</h3>
+<p>bool
+    False only when a length can be determined AND that length is 0.</p>
+<h3 id="talvez.predicates.not_empty--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>not_empty([])
+False
+not_empty([1])
+True
+not_empty("")
+False
+not_empty("hi")
+True
+class NoLen: pass
+not_empty(NoLen())
+True  # no length concept -&gt; considered not empty</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.predicates.not_empty--notes">Notes</h3>
+<p>Choosing to treat objects without a length as "not empty" avoids false
+negatives on scalar values; adjust if your domain requires stricter checks.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">not_empty</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if the object has a length &gt; 0, or if it has no length concept.</span>
+
+<span class="sd">    Semantics:</span>
+<span class="sd">      - If the object implements __len__, returns len(a) &gt; 0.</span>
+<span class="sd">      - If it does not (AttributeError / TypeError), treats it as &quot;not empty&quot;</span>
+<span class="sd">        and returns True (optimistic / permissive behavior).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : Any</span>
+<span class="sd">        Value or container to check.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        False only when a length can be determined AND that length is 0.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; not_empty([])</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_empty([1])</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; not_empty(&quot;&quot;)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; not_empty(&quot;hi&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; class NoLen: pass</span>
+<span class="sd">    &gt;&gt;&gt; not_empty(NoLen())</span>
+<span class="sd">    True  # no length concept -&gt; considered not empty</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Choosing to treat objects without a length as &quot;not empty&quot; avoids false</span>
+<span class="sd">    negatives on scalar values; adjust if your domain requires stricter checks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1"># type: ignore[arg-type]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="logical-combinators">Logical combinators</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.and_"></a>
+    <div class="doc doc-contents first">
+
+        <p>Logical AND combinator for predicates.</p>
+<p>Returns a new predicate that evaluates each provided predicate in order.
+Short-circuits and returns False on the first predicate that does NOT
+strictly return the boolean True (identity check). Any truthy non-True
+value (e.g. 1) is considered a failure, enforcing discipline in predicate
+implementations.</p>
+<h3 id="talvez.predicates.and_--parameters">Parameters</h3>
+<p>*preds : Predicate
+    Predicates of signature (Any) -&gt; bool.</p>
+<h3 id="talvez.predicates.and_--returns">Returns</h3>
+<p>Predicate
+    Composite predicate representing logical conjunction.</p>
+<h3 id="talvez.predicates.and_--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>p = and_(not_null, not_nan, not_infinite)
+p(10)
+True
+p(float("nan"))
+False
+p(None)
+False</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.predicates.and_--edge-cases">Edge Cases</h3>
+<ul>
+<li>No predicates: returns a predicate that always returns True.</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">and_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Logical AND combinator for predicates.</span>
+
+<span class="sd">    Returns a new predicate that evaluates each provided predicate in order.</span>
+<span class="sd">    Short-circuits and returns False on the first predicate that does NOT</span>
+<span class="sd">    strictly return the boolean True (identity check). Any truthy non-True</span>
+<span class="sd">    value (e.g. 1) is considered a failure, enforcing discipline in predicate</span>
+<span class="sd">    implementations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *preds : Predicate</span>
+<span class="sd">        Predicates of signature (Any) -&gt; bool.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Predicate</span>
+<span class="sd">        Composite predicate representing logical conjunction.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; p = and_(not_null, not_nan, not_infinite)</span>
+<span class="sd">    &gt;&gt;&gt; p(10)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; p(float(&quot;nan&quot;))</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; p(None)</span>
+<span class="sd">    False</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - No predicates: returns a predicate that always returns True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">preds</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_combined</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">not_true</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">_combined</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="talvez.predicates.or_"></a>
+    <div class="doc doc-contents first">
+
+        <p>Logical OR combinator for predicates.</p>
+<p>Returns a predicate that evaluates each provided predicate in order and
+short-circuits on the first that returns the literal True. Exceptions inside
+individual predicates are swallowed (treated as a non-match) to keep the OR
+robust.</p>
+<h3 id="talvez.predicates.or_--parameters">Parameters</h3>
+<p>*preds : Predicate
+    Predicates of signature (Any) -&gt; bool.</p>
+<h3 id="talvez.predicates.or_--returns">Returns</h3>
+<p>Predicate
+    Composite predicate representing logical disjunction.</p>
+<h3 id="talvez.predicates.or_--examples">Examples</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>p = or_(not_null, not_empty)
+p(None)
+False        # both fail
+p("")
+False        # not_null OK but empty string -&gt; not_empty False
+p("x")
+True
+p([])    # not_null True but empty -&gt; not_empty False -&gt; overall False
+False</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="talvez.predicates.or_--edge-cases">Edge Cases</h3>
+<ul>
+<li>No predicates: returns a predicate that always returns False.</li>
+<li>Non-boolean truthy values returned by individual predicates are ignored
+  unless they are exactly True, encouraging explicit boolean returns.</li>
+</ul>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/talvez/predicates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">or_</span><span class="p">(</span><span class="o">*</span><span class="n">preds</span><span class="p">:</span> <span class="n">Predicate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Predicate</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Logical OR combinator for predicates.</span>
+
+<span class="sd">    Returns a predicate that evaluates each provided predicate in order and</span>
+<span class="sd">    short-circuits on the first that returns the literal True. Exceptions inside</span>
+<span class="sd">    individual predicates are swallowed (treated as a non-match) to keep the OR</span>
+<span class="sd">    robust.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *preds : Predicate</span>
+<span class="sd">        Predicates of signature (Any) -&gt; bool.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Predicate</span>
+<span class="sd">        Composite predicate representing logical disjunction.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; p = or_(not_null, not_empty)</span>
+<span class="sd">    &gt;&gt;&gt; p(None)</span>
+<span class="sd">    False        # both fail</span>
+<span class="sd">    &gt;&gt;&gt; p(&quot;&quot;)</span>
+<span class="sd">    False        # not_null OK but empty string -&gt; not_empty False</span>
+<span class="sd">    &gt;&gt;&gt; p(&quot;x&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; p([])    # not_null True but empty -&gt; not_empty False -&gt; overall False</span>
+<span class="sd">    False</span>
+
+<span class="sd">    Edge Cases</span>
+<span class="sd">    ----------</span>
+<span class="sd">    - No predicates: returns a predicate that always returns False.</span>
+<span class="sd">    - Non-boolean truthy values returned by individual predicates are ignored</span>
+<span class="sd">      unless they are exactly True, encouraging explicit boolean returns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">preds</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_combined</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">p</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">continue</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">_combined</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These are strict: each predicate must return the literal <code>True</code> to be considered a pass. Any other truthy value will fail the conjunction (<code>and_</code>) or be ignored in the disjunction (<code>or_</code>).</p>
+</div>
+<h2 id="common-usage-patterns">Common usage patterns</h2>
+<pre><code class="language-python">from talvez import maybe, just, nothing, chain, compose_maybe, not_null, and_
+
+@maybe(ensure=lambda x: x &gt; 0)
+def positive_delta(x: int) -&gt; int:
+    return x - 1
+
+pipeline = compose_maybe(
+    lambda x: just(x * 2),
+    lambda y: positive_delta(y)  # returns Maybe[int]
+)
+
+result = pipeline(just(10))      # Just(19)
+failed = pipeline(just(0))       # Nothing
+</code></pre>
+<h2 id="error-warning-handling">Error &amp; warning handling</h2>
+<ul>
+<li>
+<p><code>maybe(..., allow_warning=False)</code> turns any emitted warning into failure.</p>
+</li>
+<li>
+<p><code>perhaps(..., allow_warning=True)</code> will ignore warnings and still return the
+  raw value.</p>
+</li>
+</ul>
+<h2 id="interoperability">Interoperability</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Helper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Convert Optional[T] to Maybe[T]</td>
+<td><code>from_optional</code></td>
+</tr>
+<tr>
+<td>Convert Maybe[T] to Optional[T]</td>
+<td><code>maybe_val.to_optional()</code></td>
+</tr>
+<tr>
+<td>Batch short-circuit across many Maybes</td>
+<td><code>sequence(iter_of_maybes)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2025 09:02:25 UTC">September 19, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/b-rodrigues/ryxpress" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
