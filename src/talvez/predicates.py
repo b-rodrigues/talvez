@@ -25,6 +25,7 @@ def not_true(x: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_true(True)
     False
     >>> not_true(False)
@@ -33,6 +34,7 @@ def not_true(x: Any) -> bool:
     True
     >>> not_true("anything")
     True
+    ```
 
     Notes
     -----
@@ -58,12 +60,14 @@ def not_null(a: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_null(None)
     False
     >>> not_null(0)
     True
     >>> not_null("")
     True
+    ```
     """
     # Intentionally phrased via not_true for internal stylistic consistency.
     return not_true(a is None)
@@ -85,12 +89,14 @@ def not_nan(a: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_nan(float("nan"))
     False
     >>> not_nan(3.14)
     True
     >>> not_nan("nan")
     True
+    ```
     """
     return not (isinstance(a, float) and math.isnan(a))
 
@@ -111,6 +117,7 @@ def not_infinite(a: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_infinite(float("inf"))
     False
     >>> not_infinite(float("-inf"))
@@ -119,6 +126,7 @@ def not_infinite(a: Any) -> bool:
     True
     >>> not_infinite("inf")
     True
+    ```
     """
     return not (isinstance(a, (float, int)) and (a == float("inf") or a == float("-inf")))
 
@@ -144,6 +152,7 @@ def not_undefined(a: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_undefined(None)
     False
     >>> not_undefined(float("nan"))
@@ -152,6 +161,7 @@ def not_undefined(a: Any) -> bool:
     False
     >>> not_undefined(0)
     True
+    ```
     """
     return all([
         not_null(a),
@@ -181,6 +191,7 @@ def not_empty(a: Any) -> bool:
 
     Examples
     --------
+    ```pycon
     >>> not_empty([])
     False
     >>> not_empty([1])
@@ -192,6 +203,7 @@ def not_empty(a: Any) -> bool:
     >>> class NoLen: pass
     >>> not_empty(NoLen())
     True  # no length concept -> considered not empty
+    ```
 
     Notes
     -----
@@ -226,6 +238,7 @@ def and_(*preds: Predicate) -> Predicate:
 
     Examples
     --------
+    ```pycon
     >>> p = and_(not_null, not_nan, not_infinite)
     >>> p(10)
     True
@@ -233,6 +246,7 @@ def and_(*preds: Predicate) -> Predicate:
     False
     >>> p(None)
     False
+    ```
 
     Edge Cases
     ----------
@@ -270,6 +284,7 @@ def or_(*preds: Predicate) -> Predicate:
 
     Examples
     --------
+    ```pycon
     >>> p = or_(not_null, not_empty)
     >>> p(None)
     False        # both fail
@@ -279,6 +294,7 @@ def or_(*preds: Predicate) -> Predicate:
     True
     >>> p([])    # not_null True but empty -> not_empty False -> overall False
     False
+    ```
 
     Edge Cases
     ----------

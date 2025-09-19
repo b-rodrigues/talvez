@@ -41,32 +41,32 @@ U = TypeVar("U")
 
 
 class _Nothing:
-    """
-    Sentinel singleton representing the absence of a value.
+    """Singleton representing absence in the Maybe type.
 
-    Behaves as the "empty" variant of the Maybe type. All transformation
-    methods (`fmap`, `bind`) return itself, and inspection helpers allow
-    safe branching based on presence (`is_nothing`, `is_just`).
+    Used internally and exposed via `nothing()`. Provides the inert half of
+    the `Maybe` algebra: chaining with it short‑circuits, extraction requires
+    a default.
 
-    Instances
-    ---------
-    Only a single shared instance (`Nothing`) is ever created; users
-    should obtain it via the `nothing()` factory for clarity.
-
-    Truthiness
-    ----------
-    Evaluates to False in boolean context:
-    >>> bool(nothing())
-    False
-
-    Methods
+    Summary
     -------
-    fmap(fn): returns Nothing (ignores fn)
-    bind(fn): returns Nothing (ignores fn)
-    get_or(default): returns the provided default
-    to_optional(): returns None
-    """
+    fmap(fn) -> Nothing
+    bind(fn) -> Nothing
+    get_or(v) -> v
+    to_optional() -> None
+    bool(Nothing) -> False
 
+    Examples
+    --------
+    ```pycon
+    >>> n = nothing()
+    >>> bool(n)
+    False
+    >>> n.get_or(0)
+    0
+    >>> n.bind(lambda x: just(x + 1))
+    Nothing
+    ```
+    """
     __slots__ = ()
 
     def __repr__(self) -> str:  # pragma: no cover - trivial
@@ -155,8 +155,10 @@ class Just(Generic[T]):
     Truthiness
     ----------
     Evaluates to True in boolean context:
+    ```pycon
     >>> bool(just(0))
     True
+    ```
 
     Transformations
     ---------------
@@ -340,10 +342,12 @@ def sequence(maybes: Iterator[Maybe[T]]) -> Maybe[list[T]]:
 
     Examples
     --------
+    ```pycon
     >>> sequence(iter([just(1), just(2)])).get_or([])
     [1, 2]
     >>> sequence(iter([just(1), nothing(), just(3)])).is_nothing
     True
+    ```
     """
     out: list[T] = []
     for m in maybes:

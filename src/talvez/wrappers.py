@@ -81,6 +81,7 @@ def maybe(
 
     Examples
     --------
+    ```pycon
     >>> from talvez import just, nothing
     >>> @maybe()
     ... def parse_int(s: str) -> int:
@@ -90,9 +91,11 @@ def maybe(
     10
     >>> parse_int("x").is_nothing
     True
+    ```
 
     With an ensure predicate:
 
+    ```pycon
     >>> @maybe(ensure=lambda v: v > 0)
     ... def delta(x): return x - 1
     ...
@@ -100,9 +103,11 @@ def maybe(
     True
     >>> delta(0).is_nothing   # ensure failed (returns -1)
     True
+    ```
 
     Handling warnings:
 
+    ```pycon
     >>> import warnings
     >>> @maybe(allow_warning=False)
     ... def risky():
@@ -118,6 +123,7 @@ def maybe(
     ...
     >>> tolerant().get_or(None)
     42
+    ```
 
     Edge Cases
     ----------
@@ -181,6 +187,7 @@ def perhaps(
 
     Examples
     --------
+    ```pycon
     >>> @perhaps(default=0)
     ... def safe_div(a, b): return a / b
     ...
@@ -188,9 +195,11 @@ def perhaps(
     5.0
     >>> safe_div(10, 0)
     0
+    ```
 
     With ensure:
 
+    ```pycon
     >>> @perhaps(default=None, ensure=lambda v: v > 10)
     ... def compute(x): return x * 3
     ...
@@ -198,9 +207,11 @@ def perhaps(
     15
     >>> compute(3)  # 3*3 = 9 -> ensure fails
     None
+    ```
 
     Warning handling:
 
+    ```pycon
     >>> import warnings
     >>> @perhaps(default=-1, allow_warning=False)
     ... def noisy():
@@ -209,6 +220,7 @@ def perhaps(
     ...
     >>> noisy()
     -1
+    ```
 
     Design Rationale
     ----------------

@@ -33,6 +33,7 @@ def chain(m: Maybe[Any], *fns: Callable[[Any], Maybe[Any]]) -> Maybe[Any]:
 
     Examples
     --------
+    ```pycon
     >>> from talvez import just, nothing
     >>> def parse_int(s: str):
     ...     try:
@@ -47,6 +48,7 @@ def chain(m: Maybe[Any], *fns: Callable[[Any], Maybe[Any]]) -> Maybe[Any]:
     0.1
     >>> chain(just("foo"), parse_int, reciprocal).is_nothing
     True
+    ```
 
     Edge Cases
     ----------
@@ -83,6 +85,7 @@ def compose_maybe(*fns: Callable[[Any], Maybe[Any]]):
 
     Examples
     --------
+    ```pycon
     >>> from talvez import just, nothing
     >>> def non_empty(s: str):
     ...     return just(s) if s else nothing()
@@ -103,6 +106,7 @@ def compose_maybe(*fns: Callable[[Any], Maybe[Any]]):
     True
     >>> pipeline(just("-5")).is_nothing
     True
+    ```
 
     Comparison
     ----------
