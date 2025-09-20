@@ -33,15 +33,7 @@ developers to write defensive code with scattered `try/except` blocks and
 
 ## 2. Installation
 
-To install the library, clone the repository and install it in editable mode:
-
-```bash
-# git clone <repository_url>
-# cd <repository_name>
-pip install -e .
-```
-
-(A PyPI release can come later.)
+Just use whatever package manager is the current popular one.
 
 ## 3. The Maybe Type
 
